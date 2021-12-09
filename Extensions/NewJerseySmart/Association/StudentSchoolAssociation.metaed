@@ -1,0 +1,20 @@
+  Association EdFi.StudentSchoolAssociation additions
+  string ResidentSchool
+    documentation "The school (9 digit CDS code) that the student would attend based upon their permanent or other home address."
+    is required
+    max length 9
+  descriptor TuitionCode
+    documentation "An indicator of the source of payment for a student."
+    is optional
+  descriptor NonPublic
+    documentation "An indication of whether or not a student is receiving or not receiving services under an individual service plan when that student has been parentally placed into a sectarian or non-sectarian private school and also has been determined eligible for special education and related services."
+    is optional
+  descriptor FederalHSMathTestingReq
+    documentation "This field indicates whether a student has met the federal requirement to take Algebra I (or one of the exceptions noted below) while in high school."
+    is optional
+  descriptor ELAGraduationPathwayIndicator
+    documentation "An indication if and how a student met the English graduation assessment requirements.  "
+    is optional
+  descriptor MathGraduationPathwayIndicator
+      documentation "An indication if and how a student met the math graduation assessment requirements."
+      is optional

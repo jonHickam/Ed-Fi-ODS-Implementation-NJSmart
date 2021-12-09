@@ -1,0 +1,5 @@
+Association EdFi.StudentLanguageInstructionProgramAssociation additions
+    descriptor EdFi.Language
+      documentation "Language Instruction Educational Program"
+      is required
+      role name LanguageOfInstruction

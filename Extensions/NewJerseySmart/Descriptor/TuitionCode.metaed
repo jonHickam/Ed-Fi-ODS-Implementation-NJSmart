@@ -1,0 +1,2 @@
+Descriptor TuitionCode
+    documentation "An indicator of the source of payment for a student."

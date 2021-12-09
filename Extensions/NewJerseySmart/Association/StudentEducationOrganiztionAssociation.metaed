@@ -1,0 +1,18 @@
+  Association EdFi.StudentEducationOrganizationAssociation additions
+  string MunicipalCode
+    documentation "The resident municipality (4 digit code) of the student"
+    is required
+    max length 4
+  descriptor EighthTechnologicalLiteracy
+    documentation "This data element is an indication of whether the student has met eighth grade technological proficiency."
+    is optional
+  descriptor MilitaryConnectedStudent
+    documentation "An indication that the student’s parent or guardian is on Active Duty, in the National Guard, or in the Reserve components of the United States military services."
+    is optional
+  bool HasHealthInsurance
+    documentation "Indicates if the student has health insurance."
+    is optional
+  string HealthInsuranceProvider
+    documentation "The name of the health insurance provider for that student."
+    is optional
+    max length 50

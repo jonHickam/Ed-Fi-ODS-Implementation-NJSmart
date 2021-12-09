@@ -1,0 +1,7 @@
+Association EdFi.StudentSpecialEducationProgramAssociation additions
+    bool IEPGraduationCourseRequirement
+        documentation "An indication of whether the IEP of a student with a disability contains an exemption or modification to the state course requirement component of NJDOE graduation requirements."
+        is optional
+    bool IEPGraduationAttendance
+        documentation "An indication of whether the IEP of a student with a disability contains an exemption or modification to the local attendance requirement component of NJDOE graduation requirements."
+        is optional

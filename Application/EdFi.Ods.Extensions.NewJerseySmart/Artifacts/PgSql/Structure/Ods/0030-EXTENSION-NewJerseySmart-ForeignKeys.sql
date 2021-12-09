@@ -1,0 +1,117 @@
+ALTER TABLE newjerseysmart.EighthTechnologicalLiteracyDescriptor ADD CONSTRAINT FK_36db8f_Descriptor FOREIGN KEY (EighthTechnologicalLiteracyDescriptorId)
+REFERENCES edfi.Descriptor (DescriptorId)
+ON DELETE CASCADE
+;
+
+ALTER TABLE newjerseysmart.ELAGraduationPathwayIndicatorDescriptor ADD CONSTRAINT FK_7ee768_Descriptor FOREIGN KEY (ELAGraduationPathwayIndicatorDescriptorId)
+REFERENCES edfi.Descriptor (DescriptorId)
+ON DELETE CASCADE
+;
+
+ALTER TABLE newjerseysmart.FederalHSMathTestingReqDescriptor ADD CONSTRAINT FK_e6d00a_Descriptor FOREIGN KEY (FederalHSMathTestingReqDescriptorId)
+REFERENCES edfi.Descriptor (DescriptorId)
+ON DELETE CASCADE
+;
+
+ALTER TABLE newjerseysmart.MathGraduationPathwayIndicatorDescriptor ADD CONSTRAINT FK_89dc11_Descriptor FOREIGN KEY (MathGraduationPathwayIndicatorDescriptorId)
+REFERENCES edfi.Descriptor (DescriptorId)
+ON DELETE CASCADE
+;
+
+ALTER TABLE newjerseysmart.MilitaryConnectedStudentDescriptor ADD CONSTRAINT FK_ed0d8f_Descriptor FOREIGN KEY (MilitaryConnectedStudentDescriptorId)
+REFERENCES edfi.Descriptor (DescriptorId)
+ON DELETE CASCADE
+;
+
+ALTER TABLE newjerseysmart.NonPublicDescriptor ADD CONSTRAINT FK_c32ab0_Descriptor FOREIGN KEY (NonPublicDescriptorId)
+REFERENCES edfi.Descriptor (DescriptorId)
+ON DELETE CASCADE
+;
+
+ALTER TABLE newjerseysmart.StudentEducationOrganizationAssociationExtension ADD CONSTRAINT FK_2c2930_EighthTechnologicalLiteracyDescriptor FOREIGN KEY (EighthTechnologicalLiteracyDescriptorId)
+REFERENCES newjerseysmart.EighthTechnologicalLiteracyDescriptor (EighthTechnologicalLiteracyDescriptorId)
+;
+
+CREATE INDEX FK_2c2930_EighthTechnologicalLiteracyDescriptor
+ON newjerseysmart.StudentEducationOrganizationAssociationExtension (EighthTechnologicalLiteracyDescriptorId ASC);
+
+ALTER TABLE newjerseysmart.StudentEducationOrganizationAssociationExtension ADD CONSTRAINT FK_2c2930_MilitaryConnectedStudentDescriptor FOREIGN KEY (MilitaryConnectedStudentDescriptorId)
+REFERENCES newjerseysmart.MilitaryConnectedStudentDescriptor (MilitaryConnectedStudentDescriptorId)
+;
+
+CREATE INDEX FK_2c2930_MilitaryConnectedStudentDescriptor
+ON newjerseysmart.StudentEducationOrganizationAssociationExtension (MilitaryConnectedStudentDescriptorId ASC);
+
+ALTER TABLE newjerseysmart.StudentEducationOrganizationAssociationExtension ADD CONSTRAINT FK_2c2930_StudentEducationOrganizationAssociation FOREIGN KEY (EducationOrganizationId, StudentUSI)
+REFERENCES edfi.StudentEducationOrganizationAssociation (EducationOrganizationId, StudentUSI)
+ON DELETE CASCADE
+;
+
+ALTER TABLE newjerseysmart.StudentLanguageInstructionProgramAssociationExtension ADD CONSTRAINT FK_438c5c_LanguageDescriptor FOREIGN KEY (LanguageOfInstructionLanguageDescriptorId)
+REFERENCES edfi.LanguageDescriptor (LanguageDescriptorId)
+;
+
+CREATE INDEX FK_438c5c_LanguageDescriptor
+ON newjerseysmart.StudentLanguageInstructionProgramAssociationExtension (LanguageOfInstructionLanguageDescriptorId ASC);
+
+ALTER TABLE newjerseysmart.StudentLanguageInstructionProgramAssociationExtension ADD CONSTRAINT FK_438c5c_StudentLanguageInstructionProgramAssociation FOREIGN KEY (BeginDate, EducationOrganizationId, ProgramEducationOrganizationId, ProgramName, ProgramTypeDescriptorId, StudentUSI)
+REFERENCES edfi.StudentLanguageInstructionProgramAssociation (BeginDate, EducationOrganizationId, ProgramEducationOrganizationId, ProgramName, ProgramTypeDescriptorId, StudentUSI)
+ON DELETE CASCADE
+;
+
+ALTER TABLE newjerseysmart.StudentLearningEnvironmentDescriptor ADD CONSTRAINT FK_8f00ad_Descriptor FOREIGN KEY (StudentLearningEnvironmentDescriptorId)
+REFERENCES edfi.Descriptor (DescriptorId)
+ON DELETE CASCADE
+;
+
+ALTER TABLE newjerseysmart.StudentSchoolAssociationExtension ADD CONSTRAINT FK_880cb1_ELAGraduationPathwayIndicatorDescriptor FOREIGN KEY (ELAGraduationPathwayIndicatorDescriptorId)
+REFERENCES newjerseysmart.ELAGraduationPathwayIndicatorDescriptor (ELAGraduationPathwayIndicatorDescriptorId)
+;
+
+CREATE INDEX FK_880cb1_ELAGraduationPathwayIndicatorDescriptor
+ON newjerseysmart.StudentSchoolAssociationExtension (ELAGraduationPathwayIndicatorDescriptorId ASC);
+
+ALTER TABLE newjerseysmart.StudentSchoolAssociationExtension ADD CONSTRAINT FK_880cb1_FederalHSMathTestingReqDescriptor FOREIGN KEY (FederalHSMathTestingReqDescriptorId)
+REFERENCES newjerseysmart.FederalHSMathTestingReqDescriptor (FederalHSMathTestingReqDescriptorId)
+;
+
+CREATE INDEX FK_880cb1_FederalHSMathTestingReqDescriptor
+ON newjerseysmart.StudentSchoolAssociationExtension (FederalHSMathTestingReqDescriptorId ASC);
+
+ALTER TABLE newjerseysmart.StudentSchoolAssociationExtension ADD CONSTRAINT FK_880cb1_MathGraduationPathwayIndicatorDescriptor FOREIGN KEY (MathGraduationPathwayIndicatorDescriptorId)
+REFERENCES newjerseysmart.MathGraduationPathwayIndicatorDescriptor (MathGraduationPathwayIndicatorDescriptorId)
+;
+
+CREATE INDEX FK_880cb1_MathGraduationPathwayIndicatorDescriptor
+ON newjerseysmart.StudentSchoolAssociationExtension (MathGraduationPathwayIndicatorDescriptorId ASC);
+
+ALTER TABLE newjerseysmart.StudentSchoolAssociationExtension ADD CONSTRAINT FK_880cb1_NonPublicDescriptor FOREIGN KEY (NonPublicDescriptorId)
+REFERENCES newjerseysmart.NonPublicDescriptor (NonPublicDescriptorId)
+;
+
+CREATE INDEX FK_880cb1_NonPublicDescriptor
+ON newjerseysmart.StudentSchoolAssociationExtension (NonPublicDescriptorId ASC);
+
+ALTER TABLE newjerseysmart.StudentSchoolAssociationExtension ADD CONSTRAINT FK_880cb1_StudentSchoolAssociation FOREIGN KEY (EntryDate, SchoolId, StudentUSI)
+REFERENCES edfi.StudentSchoolAssociation (EntryDate, SchoolId, StudentUSI)
+ON DELETE CASCADE
+ON UPDATE CASCADE
+;
+
+ALTER TABLE newjerseysmart.StudentSchoolAssociationExtension ADD CONSTRAINT FK_880cb1_TuitionCodeDescriptor FOREIGN KEY (TuitionCodeDescriptorId)
+REFERENCES newjerseysmart.TuitionCodeDescriptor (TuitionCodeDescriptorId)
+;
+
+CREATE INDEX FK_880cb1_TuitionCodeDescriptor
+ON newjerseysmart.StudentSchoolAssociationExtension (TuitionCodeDescriptorId ASC);
+
+ALTER TABLE newjerseysmart.StudentSpecialEducationProgramAssociationExtension ADD CONSTRAINT FK_3da84f_StudentSpecialEducationProgramAssociation FOREIGN KEY (BeginDate, EducationOrganizationId, ProgramEducationOrganizationId, ProgramName, ProgramTypeDescriptorId, StudentUSI)
+REFERENCES edfi.StudentSpecialEducationProgramAssociation (BeginDate, EducationOrganizationId, ProgramEducationOrganizationId, ProgramName, ProgramTypeDescriptorId, StudentUSI)
+ON DELETE CASCADE
+;
+
+ALTER TABLE newjerseysmart.TuitionCodeDescriptor ADD CONSTRAINT FK_fcbf7d_Descriptor FOREIGN KEY (TuitionCodeDescriptorId)
+REFERENCES edfi.Descriptor (DescriptorId)
+ON DELETE CASCADE
+;
+

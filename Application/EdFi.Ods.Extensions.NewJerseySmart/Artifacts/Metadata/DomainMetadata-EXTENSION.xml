@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<AggregateExtensions logicalSchema="NewJerseySmart" schema="newjerseysmart">
+  <Aggregate root="ELAGraduationPathwayIndicatorDescriptor">
+    <Entity table="ELAGraduationPathwayIndicatorDescriptor" isA="Descriptor" schema="newjerseysmart"/>
+  </Aggregate>
+  <Aggregate root="EighthTechnologicalLiteracyDescriptor">
+    <Entity table="EighthTechnologicalLiteracyDescriptor" isA="Descriptor" schema="newjerseysmart"/>
+  </Aggregate>
+  <Aggregate root="FederalHSMathTestingReqDescriptor">
+    <Entity table="FederalHSMathTestingReqDescriptor" isA="Descriptor" schema="newjerseysmart"/>
+  </Aggregate>
+  <Aggregate root="MathGraduationPathwayIndicatorDescriptor">
+    <Entity table="MathGraduationPathwayIndicatorDescriptor" isA="Descriptor" schema="newjerseysmart"/>
+  </Aggregate>
+  <Aggregate root="MilitaryConnectedStudentDescriptor">
+    <Entity table="MilitaryConnectedStudentDescriptor" isA="Descriptor" schema="newjerseysmart"/>
+  </Aggregate>
+  <Aggregate root="NonPublicDescriptor">
+    <Entity table="NonPublicDescriptor" isA="Descriptor" schema="newjerseysmart"/>
+  </Aggregate>
+  <Aggregate root="StudentLearningEnvironmentDescriptor">
+    <Entity table="StudentLearningEnvironmentDescriptor" isA="Descriptor" schema="newjerseysmart"/>
+  </Aggregate>
+  <Aggregate root="TuitionCodeDescriptor">
+    <Entity table="TuitionCodeDescriptor" isA="Descriptor" schema="newjerseysmart"/>
+  </Aggregate>
+</AggregateExtensions>

@@ -274,4 +274,4 @@ INSERT INTO newjerseysmart.WorldLanguageAssessmentDescriptor(WorldLanguageAssess
 SELECT descriptorId from edfi.Descriptor where Namespace = 'uri://njsmart.org/WorldLanguageAssessmentDescriptor';
 
 */
-rollback;
+commit;

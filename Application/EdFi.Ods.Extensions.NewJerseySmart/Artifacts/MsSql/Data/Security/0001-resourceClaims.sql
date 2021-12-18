@@ -11,7 +11,7 @@ DECLARE @ParentResourceClaimId INT
 SELECT @ParentResourceClaimId = ResourceClaimId
 FROM [dbo].[ResourceClaims]
 WHERE ResourceName = 'relationshipBasedData';
- 
+ /*
 INSERT INTO [dbo].[ResourceClaims] ( [DisplayName]
                                      ,[ResourceName]
                                      ,[ClaimName]     
@@ -20,11 +20,11 @@ INSERT INTO [dbo].[ResourceClaims] ( [DisplayName]
                                      )
 VALUES ('StudentGiftedProgramAssociation'
         ,'StudentGiftedProgramAssociation'
-        ,'http://ed-fi.org/ods/identity/claims/isee/StudentGiftedProgramAssociation'
+        ,'http://ed-fi.org/ods/identity/claims/isee/StudentGiftedProgramAssociationDescriptor'
         ,@ParentResourceClaimId
         ,@ApplicationId
         );
-
+*/
 --  descriptors
 
 DECLARE @SystemDescriptorsId INT;
@@ -39,9 +39,9 @@ INSERT INTO [dbo].[resourceclaims]
              [claimname],
              [parentresourceclaimid],
              [application_applicationid])
-VALUES      ( 'EighthTechnologicalLiteracy',
-              'EighthTechnologicalLiteracy',
-'http://ed-fi.org/ods/identity/claims/newjerseysmart/EighthTechnologicalLiteracy',
+VALUES      ( 'eighthTechnologicalLiteracyDescriptor',
+              'eighthTechnologicalLiteracyDescriptor',
+'http://ed-fi.org/ods/identity/claims/new-jersey-smart/EighthTechnologicalLiteracyDescriptor',
 @SystemDescriptorsId,
 @ApplicationId );
  
@@ -53,9 +53,9 @@ INSERT INTO [dbo].[resourceclaims]
              [claimname],
              [parentresourceclaimid],
              [application_applicationid])
-VALUES      ( 'ELAGraduationPathwayIndicator',
-              'ELAGraduationPathwayIndicator',
-'http://ed-fi.org/ods/identity/claims/newjerseysmart/ELAGraduationPathwayIndicator',
+VALUES      ( 'elaGraduationPathwayIndicatorDescriptor',
+              'elaGraduationPathwayIndicatorDescriptor',
+'http://ed-fi.org/ods/identity/claims/new-jersey-smart/ELAGraduationPathwayIndicatorDescriptor',
 @SystemDescriptorsId,
 @ApplicationId );
  
@@ -67,9 +67,9 @@ INSERT INTO [dbo].[resourceclaims]
              [claimname],
              [parentresourceclaimid],
              [application_applicationid])
-VALUES      ( 'FederalHSMathTestingReq',
-              'FederalHSMathTestingReq',
-'http://ed-fi.org/ods/identity/claims/newjerseysmart/FederalHSMathTestingReq',
+VALUES      ( 'federalHSMathTestingReqDescriptor',
+              'federalHSMathTestingReqDescriptor',
+'http://ed-fi.org/ods/identity/claims/new-jersey-smart/FederalHSMathTestingReqDescriptor',
 @SystemDescriptorsId,
 @ApplicationId );
  
@@ -82,9 +82,9 @@ INSERT INTO [dbo].[resourceclaims]
              [claimname],
              [parentresourceclaimid],
              [application_applicationid])
-VALUES      ( 'MathGraduationPathwayIndicator',
-              'MathGraduationPathwayIndicator',
-'http://ed-fi.org/ods/identity/claims/newjerseysmart/MathGraduationPathwayIndicator',
+VALUES      ( 'mathGraduationPathwayIndicatorDescriptor',
+              'mathGraduationPathwayIndicatorDescriptor',
+'http://ed-fi.org/ods/identity/claims/new-jersey-smart/MathGraduationPathwayIndicatorDescriptor',
 @SystemDescriptorsId,
 @ApplicationId );
  
@@ -96,9 +96,9 @@ INSERT INTO [dbo].[resourceclaims]
              [claimname],
              [parentresourceclaimid],
              [application_applicationid])
-VALUES      ( 'MilitaryConnectedStudent',
-              'MilitaryConnectedStudent',
-'http://ed-fi.org/ods/identity/claims/newjerseysmart/MilitaryConnectedStudent',
+VALUES      ( 'militaryConnectedStudentDescriptor',
+              'militaryConnectedStudentDescriptor',
+'http://ed-fi.org/ods/identity/claims/new-jersey-smart/MilitaryConnectedStudentDescriptor',
 @SystemDescriptorsId,
 @ApplicationId );
  
@@ -110,9 +110,9 @@ INSERT INTO [dbo].[resourceclaims]
              [claimname],
              [parentresourceclaimid],
              [application_applicationid])
-VALUES      ( 'NonPublic',
-              'NonPublic',
-'http://ed-fi.org/ods/identity/claims/newjerseysmart/NonPublic',
+VALUES      ( 'nonPublicDescriptor',
+              'nonPublicDescriptor',
+'http://ed-fi.org/ods/identity/claims/new-jersey-smart/NonPublicDescriptor',
 @SystemDescriptorsId,
 @ApplicationId );
  
@@ -124,9 +124,9 @@ INSERT INTO [dbo].[resourceclaims]
              [claimname],
              [parentresourceclaimid],
              [application_applicationid])
-VALUES      ( 'StudentLearningEnvironment',
-              'StudentLearningEnvironment',
-'http://ed-fi.org/ods/identity/claims/newjerseysmart/StudentLearningEnvironment',
+VALUES      ( 'studentLearningEnvironmentDescriptor',
+              'studentLearningEnvironmentDescriptor',
+'http://ed-fi.org/ods/identity/claims/new-jersey-smart/StudentLearningEnvironmentDescriptor',
 @SystemDescriptorsId,
 @ApplicationId );
  
@@ -138,9 +138,37 @@ INSERT INTO [dbo].[resourceclaims]
              [claimname],
              [parentresourceclaimid],
              [application_applicationid])
-VALUES      ( 'TuitionCode',
-              'TuitionCode',
-'http://ed-fi.org/ods/identity/claims/newjerseysmart/TuitionCode',
+VALUES      ( 'tuitionCodeDescriptor',
+              'tuitionCodeDescriptor',
+'http://ed-fi.org/ods/identity/claims/new-jersey-smart/TuitionCodeDescriptor',
 @SystemDescriptorsId,
 @ApplicationId );
+
+
+
+INSERT INTO [dbo].[resourceclaims]
+            ([displayname],
+             [resourcename],
+             [claimname],
+             [parentresourceclaimid],
+             [application_applicationid])
+VALUES      ( 'bridgeYearParticipationStatusDescriptor',
+              'bridgeYearParticipationStatusDescriptor',
+'http://ed-fi.org/ods/identity/claims/new-jersey-smart/bridgeYearParticipationStatusDescriptor',
+@SystemDescriptorsId,
+@ApplicationId );
+
+
+INSERT INTO [dbo].[resourceclaims]
+            ([displayname],
+             [resourcename],
+             [claimname],
+             [parentresourceclaimid],
+             [application_applicationid])
+VALUES      ( 'WorldLanguageAssessmentDescriptor',
+              'WorldLanguageAssessmentDescriptor',
+'http://ed-fi.org/ods/identity/claims/new-jersey-smart/WorldLanguageAssessmentDescriptor',
+@SystemDescriptorsId,
+@ApplicationId );
+
  

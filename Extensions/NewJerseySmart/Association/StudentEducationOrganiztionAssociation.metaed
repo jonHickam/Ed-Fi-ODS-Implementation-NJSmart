@@ -16,3 +16,9 @@
     documentation "The name of the health insurance provider for that student."
     is optional
     max length 50
+  descriptor BridgeYearParticipationStatus
+    documentation "An indication of whether the student plans to or is currently participating in the “Bridge Year Pilot Program."
+    is optional
+  descriptor WorldLanguageAssessment
+    documentation "The World Language Assessment taken by the student"
+    is optional

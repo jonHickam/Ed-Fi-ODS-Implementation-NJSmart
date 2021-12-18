@@ -207,6 +207,30 @@ INSERT INTO edfi.descriptor (Namespace, CodeValue, shortDescription, Description
 INSERT INTO edfi.descriptor (Namespace, CodeValue, shortDescription, Description) values ('uri://njsmart.org/WorldLanguageAssessmentDescriptor','STAMP','Standards-based Measurement of Proficiency','Standards-based Measurement of Proficiency');
 INSERT INTO edfi.descriptor (Namespace, CodeValue, shortDescription, Description) values ('uri://njsmart.org/WorldLanguageAssessmentDescriptor','WORLDSPEAK','Avant’s language proficiency test of less commonly taught languages','Avant’s language proficiency test of less commonly taught languages');
 
+
+INSERT INTO edfi.descriptor (Namespace, CodeValue, shortDescription, Description) values ('uri://njsmart.org/InternetAccessTypeInResidenceDescriptor','1','Personal access','Personal access');
+INSERT INTO edfi.descriptor (Namespace, CodeValue, shortDescription, Description) values ('uri://njsmart.org/InternetAccessTypeInResidenceDescriptor','2','School/district funded access through mobile hotspots with paid data plans','School or district provided access through mobile hotspots with paid data plans');
+INSERT INTO edfi.descriptor (Namespace, CodeValue, shortDescription, Description) values ('uri://njsmart.org/InternetAccessTypeInResidenceDescriptor','3','School or district provided access through Internet','School or district provided access through Internet');
+INSERT INTO edfi.descriptor (Namespace, CodeValue, shortDescription, Description) values ('uri://njsmart.org/InternetAccessTypeInResidenceDescriptor','4','School or district funded home Internet subscription','School or district provided access by paying the cost of home Internet subscription for student');
+INSERT INTO edfi.descriptor (Namespace, CodeValue, shortDescription, Description) values ('uri://njsmart.org/InternetAccessTypeInResidenceDescriptor','5','School or district provided access through a district','School or district provided access through a district');
+INSERT INTO edfi.descriptor (Namespace, CodeValue, shortDescription, Description) values ('uri://njsmart.org/InternetAccessTypeInResidenceDescriptor','6','School or district provided access by another means','School or district provided access by another means');
+INSERT INTO edfi.descriptor (Namespace, CodeValue, shortDescription, Description) values ('uri://njsmart.org/InternetAccessTypeInResidenceDescriptor','7','Other','Other');
+INSERT INTO edfi.descriptor (Namespace, CodeValue, shortDescription, Description) values ('uri://njsmart.org/InternetAccessTypeInResidenceDescriptor','8','Unknown','Unknown');
+INSERT INTO edfi.descriptor (Namespace, CodeValue, shortDescription, Description) values ('uri://njsmart.org/PrimaryLearningDeviceAccessDescriptor','1','Personal, dedicated device (student is the sole user)','Personal, dedicated device (student is the sole user)');
+INSERT INTO edfi.descriptor (Namespace, CodeValue, shortDescription, Description) values ('uri://njsmart.org/PrimaryLearningDeviceAccessDescriptor','2','Personal device, shared with others','Personal device, shared with others');
+INSERT INTO edfi.descriptor (Namespace, CodeValue, shortDescription, Description) values ('uri://njsmart.org/PrimaryLearningDeviceAccessDescriptor','3','School or district provided, dedicated device (student is the sole user)','School or district provided, dedicated device (student is the sole user)');
+INSERT INTO edfi.descriptor (Namespace, CodeValue, shortDescription, Description) values ('uri://njsmart.org/PrimaryLearningDeviceAccessDescriptor','4','School or district provided device, shared with others','School or district provided device, shared with others');
+INSERT INTO edfi.descriptor (Namespace, CodeValue, shortDescription, Description) values ('uri://njsmart.org/PrimaryLearningDeviceAccessDescriptor','5','Other','Other');
+INSERT INTO edfi.descriptor (Namespace, CodeValue, shortDescription, Description) values ('uri://njsmart.org/PrimaryLearningDeviceAccessDescriptor','6','Unknown','Unknown');
+INSERT INTO edfi.descriptor (Namespace, CodeValue, shortDescription, Description) values ('uri://njsmart.org/PrimaryLearningDeviceAccessDescriptor','7','None','None');
+INSERT INTO edfi.descriptor (Namespace, CodeValue, shortDescription, Description) values ('uri://njsmart.org/PrimaryLearningDeviceAwayFromSchoolDescriptor','1','Chromebooks/laptops','Chromebooks/laptops');
+INSERT INTO edfi.descriptor (Namespace, CodeValue, shortDescription, Description) values ('uri://njsmart.org/PrimaryLearningDeviceAwayFromSchoolDescriptor','2','iPads/tablets','iPads/tablets');
+INSERT INTO edfi.descriptor (Namespace, CodeValue, shortDescription, Description) values ('uri://njsmart.org/PrimaryLearningDeviceAwayFromSchoolDescriptor','3','Other','Other');
+INSERT INTO edfi.descriptor (Namespace, CodeValue, shortDescription, Description) values ('uri://njsmart.org/PrimaryLearningDeviceAwayFromSchoolDescriptor','4','Unknown','Unknown');
+INSERT INTO edfi.descriptor (Namespace, CodeValue, shortDescription, Description) values ('uri://njsmart.org/PrimaryLearningDeviceAwayFromSchoolDescriptor','5','None','None');
+
+
+
 INSERT INTO edfi.AssessmentCategoryDescriptor(AssessmentCategoryDescriptorId)
 SELECT descriptorId from edfi.Descriptor where Namespace = 'uri://njsmart.org/assessmentCategoryDescriptor';
 
@@ -242,6 +266,17 @@ INSERT INTO edfi.studentCharacteristicDescriptor( studentCharacteristicDescripto
 SELECT descriptorId from edfi.Descriptor where Namespace = 'uri://njsmart.org/studentCharacteristicDescriptor';
 
 
+INSERT INTO edfi.InternetAccessTypeInResidenceDescriptor( InternetAccessTypeInResidenceDescriptorId)
+SELECT descriptorId from edfi.Descriptor where Namespace = 'uri://njsmart.org/InternetAccessTypeInResidenceDescriptor';
+
+INSERT INTO edfi.PrimaryLearningDeviceAccessDescriptor( PrimaryLearningDeviceAccessDescriptorId)
+SELECT descriptorId from edfi.Descriptor where Namespace = 'uri://njsmart.org/PrimaryLearningDeviceAccessDescriptor';
+
+INSERT INTO edfi.PrimaryLearningDeviceAwayFromSchoolDescriptor( PrimaryLearningDeviceAwayFromSchoolDescriptorId)
+SELECT descriptorId from edfi.Descriptor where Namespace = 'uri://njsmart.org/PrimaryLearningDeviceAwayFromSchoolDescriptor';
+
+
+
 INSERT INTO newjerseysmart.EighthTechnologicalLiteracyDescriptor( EighthTechnologicalLiteracyDescriptorId)
 SELECT descriptorId from edfi.Descriptor where Namespace = 'uri://njsmart.org/EighthTechnologicalLiteracyDescriptor';
 
@@ -263,10 +298,8 @@ SELECT descriptorId from edfi.Descriptor where Namespace = 'uri://njsmart.org/no
 INSERT INTO newjerseysmart.TuitionCodeDescriptor( TuitionCodeDescriptorId)
 SELECT descriptorId from edfi.Descriptor where Namespace = 'uri://njsmart.org/TuitionCodeDescriptor';
 
-
 /*
-
-INSERT INTO newjerseysmart.participationStatusDescriptor( participationStatusDescriptorId)
+INSERT INTO newjerseysmart.bridgeYearParticipationStatusDescriptor( bridgeYearParticipationStatusDescriptorId)
 SELECT descriptorId from edfi.Descriptor where Namespace = 'uri://njsmart.org/bridgeYearParticipationStatusDescriptor';
 
 

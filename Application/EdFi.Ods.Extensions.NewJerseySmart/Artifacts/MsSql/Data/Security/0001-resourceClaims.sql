@@ -170,5 +170,3 @@ VALUES      ( 'WorldLanguageAssessmentDescriptor',
 'http://ed-fi.org/ods/identity/claims/new-jersey-smart/WorldLanguageAssessmentDescriptor',
 @SystemDescriptorsId,
 @ApplicationId );
-
- 

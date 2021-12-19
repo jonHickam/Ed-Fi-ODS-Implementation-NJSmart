@@ -1,0 +1,242 @@
+  Association EdFi.StudentEducationOrganizationResponsibilityAssociation additions
+  string MunicipalCode
+    documentation "The resident municipality (4 digit code) of the student"
+    is required
+    max length 4
+  descriptor EighthTechnologicalLiteracy
+    documentation "This data element is an indication of whether the student has met eighth grade technological proficiency."
+    is optional
+  descriptor MilitaryConnectedStudent
+    documentation "An indication that the student’s parent or guardian is on Active Duty, in the National Guard, or in the Reserve components of the United States military services."
+    is optional
+  bool HasHealthInsurance
+    documentation "Indicates if the student has health insurance."
+    is optional
+  string HealthInsuranceProvider
+    documentation "The name of the health insurance provider for that student."
+    is optional
+    max length 50
+  descriptor BridgeYearParticipationStatus
+    documentation "An indication of whether the student plans to or is currently participating in the “Bridge Year Pilot Program."
+    is optional
+  string LocalIdentificationNumber
+    documentation "A number assigned and maintained by the local school district that is unique for each student."
+    is optional
+    min length 1
+    max length 20
+  string CityOfBirth
+    documentation "The name of the city or town (or comparable unit) in which the student was born"
+    is optional
+    min length 1
+    max length 30
+  descriptor EdFi.StateAbbreviation
+    documentation "The name of the state in which the student was born."
+    is optional
+    role name StateOfBirth
+  bool HispanicLatinoEthnicity
+    documentation "student ethnicity"
+    is optional
+  descriptor EdFi.Race
+    documentation "student race"
+    is optional collection
+  string DistrictStatus
+    documentation "The student’s current enrollment status within a district"
+    is optional
+    min length 1
+    max length 1
+  string EnrollmentType
+    documentation "The amount of the school day a student is enrolled at attending school"
+    is optional
+    min length 1
+    max length 1
+  string CountyCodeResident
+    documentation "The New Jersey county in which the student resides."
+    is optional
+    min length 2
+    max length 2
+  string DistrictCodeResident
+    documentation "The resident district of the student"
+    is optional
+    min length 2
+    max length 2
+  string SchoolCodeResident
+    documentation "The resident school in which a student would attend based upon their permanent or other home address"
+    is optional
+    min length 2
+    max length 2
+  date DistrictEntryDate
+    documentation "the date which a student is enrolled in the district"
+    is optional
+  string CountyCodeReceiving
+    documentation "The New Jersey county in which the student is received in a sending/receiving relationship."
+    is optional
+    min length 2
+    max length 2
+  string DistrictCodeReceiving
+    documentation "The receiving district of the student in a sending/receiving relationship"
+    is optional
+    min length 2
+    max length 2
+  string SchoolCodeReceiving
+    documentation "The receiving school in a sending/receiving relationship."
+    is optional
+    min length 2
+    max length 2
+  string CountyCodeAttending
+    documentation "The county in which the student is attending school."
+    is optional
+    min length 2
+    max length 2
+  string DistrictCodeAttending
+    documentation "The district in which the student is attending school"
+    is optional
+    min length 2
+    max length 2
+  string SchoolCodeAttending
+    documentation "The school in which a student is attending"
+    is optional
+    min length 2
+    max length 2
+  date YearOfGraduation
+    documentation "The projected year of the student’s high school graduation"
+    is optional
+  date SchoolEntryDate
+    documentation "The year, month, and day on which a student is enrolled in their attending school"
+    is optional
+  date SchoolExitDate
+    documentation "The year, month and day of the first day after the date the student last attended school when the student exits during the school year"
+    is optional
+  descriptor EdFi.ExitWithdrawType
+    documentation "An indication of the reason why the student exited from membership in the school during the school year."
+    is optional
+  descriptor TuitionCode
+    documentation "An indicator of the source of payment for a student."
+    is optional
+  descriptor EdFi.StudentCharacteristic
+    documentation "Various characteristics of the student"
+    is optional collection
+  descriptor EdFi.GradeLevel
+    documentation "Student grade"
+    is optional
+  descriptor EdFi.EducationPlan
+    documentation "programTypeCode- The primary program of instruction for the student"
+    is optional
+  bool Retained
+    documentation "An indication that the student is repeating their current grade leve"
+    is optional
+  descriptor EdFi.Disability
+    documentation "SpecialEducationClassification"
+    is optional
+  date ELLIdentificationDate
+    documentation "The year, month, and day on which a student is identified by the district as being in need of English language learner (ELL) service"
+    is optional
+  date ELLExitDate
+    documentation "The year, month, and day on which a student successfully completes an English language learner (ELL) program"
+    is optional
+  descriptor NonPublic
+    documentation "An indication of whether or not a student is receiving or not receiving services under an individual service plan when that student has been parentally placed into a sectarian or non-sectarian private school and also has been determined eligible for special education and related services."
+    is optional
+  string ResidentMunicipalCode
+    documentation "The resident municipality of the student"
+    is optional
+    min length 4
+    max length 4
+  descriptor ELAGraduationPathwayIndicator
+    documentation "An indication if and how a student met the English graduation assessment requirements.  "
+    is optional
+  descriptor MathGraduationPathwayIndicator
+      documentation "An indication if and how a student met the math graduation assessment requirements."
+      is optional
+  descriptor FederalHSMathTestingReq
+    documentation "This field indicates whether a student has met the federal requirement to take Algebra I (or one of the exceptions noted below) while in high school."
+    is optional
+  descriptor EdFi.LanguageInstructionProgramService
+    documentation "The course in which an English language learner is placed in order to develop and attain English proficiency"
+    is optional
+  descriptor WorldLanguageAssessment
+    documentation "The World Language Assessment taken by the student"
+    is optional
+  descriptor EdFi.Language
+    documentation "The specific language other than English that is being assessed"
+    is optional
+    role name WorldLanguagesAssessed
+  bool GiftedAndTalentedStudent
+    documentation "is the student in a Gifted and Talented Program"
+    is optional
+  descriptor EdFi.InternetAccessTypeInResidence
+    documentation "StudentInternetConnectivity"
+    is optional
+  integer RemoteDaysPresent
+    documentation "The number of days a student attended school"
+    is optional
+  integer RemoteDaysAbsent
+    documentation "The number of days a student is absent"
+    is optional
+  descriptor EdFi.PrimaryLearningDeviceAccess
+    documentation "StudentDeviceOwner"
+    is optional
+  descriptor EdFi.PrimaryLearningDeviceAwayFromSchool
+    documentation "StudentDeviceType"
+    is optional
+  string IEPGraduationCourseRequirement
+    documentation "An indication  the IEP of a student with a disability contains an exemption or modification to the state course"
+    is optional
+    min length 1
+    max length 1
+  string IEPGraduationAttendance
+    documentation "An indication of whether the IEPof a student with a disability contains an exemption or modification to the local attendance requirement"
+    is optional
+    min length 1
+    max length 1
+  descriptor EdFi.Language
+    documentation "The language of instruction for the Language Instruction Educational Program (LIEP) course in"
+    is optional
+    role name LIEPLanguageOfInstruction
+  string CityOfResidence
+    documentation "The name of the city or town of the student’s home address"
+    is optional
+    min length 1
+    max length 30
+  descriptor EdFi.Language
+    documentation "The name of the primary language or dialect that students use to communicate at home."
+    is optional
+    role name HomeLanguage
+  bool Homeless
+    documentation "indication of whether a student is homeless."
+    is optional
+  descriptor EdFi.HomelessPrimaryNighttimeResidence
+    documentation "The primary nighttime residence of the student at the time the student is identified as homeless."
+    is optional
+  bool AlternativeEducationProgram
+    documentation "An indication that the student is enrolled in an alternative education program "
+    is optional
+  bool TitleIScience
+    documentation "Student is receiving services in support of Science instruction"
+    is optional
+  bool TitleIMath
+  documentation "Student is receiving services in support of math instruction"
+    is optional
+  bool TitleILanguage
+    documentation "Student is receiving services in support of Language Arts instruction"
+    is optional
+  bool IsEnrolled
+    documentation "SchoolStatus- is student currently enrolled"
+    is optional
+  descriptor EdFi.EntryType
+    documentation "SchoolEntryCode "
+    is optional
+  integer DaysOpen
+    documentation "The number of days the program of instruction was in session for the entire year"
+    is optional
+  integer NumberOfDaysPresent
+    documentation "The number of school days in session a student is recorded as present"
+    is optional
+  integer NumberOfDaysAb
+    documentation "The number of days a student is absent"
+    is optional
+  integer NumberOfStateExcusedAbsences
+    documentation "The number of days a student is absent for a State-excused reason"
+    is optional
+  bool ReportedSharedVoc
+    documentation "An indication that the student is a shared-time vocational school student being reported by the county vocational school."
+    is optional

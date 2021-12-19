@@ -22,3 +22,6 @@
   descriptor WorldLanguageAssessment
     documentation "The World Language Assessment taken by the student"
     is optional
+  descriptor EdFi.ResidencyStatus
+    documentation "aka InDistrictPlacement"
+    is optional

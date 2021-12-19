@@ -1,3 +1,21 @@
+CREATE TRIGGER [newjerseysmart].[newjerseysmart_BridgeYearParticipationStatusDescriptor_TR_DeleteTracking] ON [newjerseysmart].[BridgeYearParticipationStatusDescriptor] AFTER DELETE AS
+BEGIN
+    IF @@rowcount = 0 
+        RETURN
+
+    SET NOCOUNT ON
+
+    INSERT INTO [tracked_deletes_newjerseysmart].[BridgeYearParticipationStatusDescriptor](BridgeYearParticipationStatusDescriptorId, Id, ChangeVersion)
+    SELECT  d.BridgeYearParticipationStatusDescriptorId, Id, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
+    FROM    deleted d
+            INNER JOIN edfi.Descriptor b ON d.BridgeYearParticipationStatusDescriptorId = b.DescriptorId
+END
+GO
+
+ALTER TABLE [newjerseysmart].[BridgeYearParticipationStatusDescriptor] ENABLE TRIGGER [newjerseysmart_BridgeYearParticipationStatusDescriptor_TR_DeleteTracking]
+GO
+
+
 CREATE TRIGGER [newjerseysmart].[newjerseysmart_ELAGraduationPathwayIndicatorDescriptor_TR_DeleteTracking] ON [newjerseysmart].[ELAGraduationPathwayIndicatorDescriptor] AFTER DELETE AS
 BEGIN
     IF @@rowcount = 0 
@@ -139,6 +157,24 @@ END
 GO
 
 ALTER TABLE [newjerseysmart].[TuitionCodeDescriptor] ENABLE TRIGGER [newjerseysmart_TuitionCodeDescriptor_TR_DeleteTracking]
+GO
+
+
+CREATE TRIGGER [newjerseysmart].[newjerseysmart_WorldLanguageAssessmentDescriptor_TR_DeleteTracking] ON [newjerseysmart].[WorldLanguageAssessmentDescriptor] AFTER DELETE AS
+BEGIN
+    IF @@rowcount = 0 
+        RETURN
+
+    SET NOCOUNT ON
+
+    INSERT INTO [tracked_deletes_newjerseysmart].[WorldLanguageAssessmentDescriptor](WorldLanguageAssessmentDescriptorId, Id, ChangeVersion)
+    SELECT  d.WorldLanguageAssessmentDescriptorId, Id, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
+    FROM    deleted d
+            INNER JOIN edfi.Descriptor b ON d.WorldLanguageAssessmentDescriptorId = b.DescriptorId
+END
+GO
+
+ALTER TABLE [newjerseysmart].[WorldLanguageAssessmentDescriptor] ENABLE TRIGGER [newjerseysmart_WorldLanguageAssessmentDescriptor_TR_DeleteTracking]
 GO
 
 

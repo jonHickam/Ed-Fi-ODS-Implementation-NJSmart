@@ -13,7 +13,7 @@
         <xs:element name="StudentSchoolAssociation" type="EXTENSION-StudentSchoolAssociationExtension" />
         <xs:element name="StudentSectionAssociation" type="StudentSectionAssociation" />
         <xs:element name="GraduationPlan" type="GraduationPlan" />
-        <xs:element name="StudentEducationOrganizationResponsibilityAssociation" type="StudentEducationOrganizationResponsibilityAssociation" />
+        <xs:element name="StudentEducationOrganizationResponsibilityAssociation" type="EXTENSION-StudentEducationOrganizationResponsibilityAssociationExtension" />
         <xs:element name="StudentEducationOrganizationAssociation" type="EXTENSION-StudentEducationOrganizationAssociationExtension" />
         <xs:element name="SectionReference" type="SectionReferenceType" />
       </xs:choice>

@@ -1,3 +1,12 @@
+-- Table [newjerseysmart].[BridgeYearParticipationStatusDescriptor] --
+CREATE TABLE [newjerseysmart].[BridgeYearParticipationStatusDescriptor] (
+    [BridgeYearParticipationStatusDescriptorId] [INT] NOT NULL,
+    CONSTRAINT [BridgeYearParticipationStatusDescriptor_PK] PRIMARY KEY CLUSTERED (
+        [BridgeYearParticipationStatusDescriptorId] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
 -- Table [newjerseysmart].[EighthTechnologicalLiteracyDescriptor] --
 CREATE TABLE [newjerseysmart].[EighthTechnologicalLiteracyDescriptor] (
     [EighthTechnologicalLiteracyDescriptorId] [INT] NOT NULL,
@@ -61,6 +70,9 @@ CREATE TABLE [newjerseysmart].[StudentEducationOrganizationAssociationExtension]
     [MilitaryConnectedStudentDescriptorId] [INT] NULL,
     [HasHealthInsurance] [BIT] NULL,
     [HealthInsuranceProvider] [NVARCHAR](50) NULL,
+    [BridgeYearParticipationStatusDescriptorId] [INT] NULL,
+    [WorldLanguageAssessmentDescriptorId] [INT] NULL,
+    [ResidencyStatusDescriptorId] [INT] NULL,
     [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [StudentEducationOrganizationAssociationExtension_PK] PRIMARY KEY CLUSTERED (
         [EducationOrganizationId] ASC,
@@ -69,6 +81,129 @@ CREATE TABLE [newjerseysmart].[StudentEducationOrganizationAssociationExtension]
 ) ON [PRIMARY]
 GO
 ALTER TABLE [newjerseysmart].[StudentEducationOrganizationAssociationExtension] ADD CONSTRAINT [StudentEducationOrganizationAssociationExtension_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
+GO
+
+-- Table [newjerseysmart].[StudentEducationOrganizationResponsibilityAssociationExtension] --
+CREATE TABLE [newjerseysmart].[StudentEducationOrganizationResponsibilityAssociationExtension] (
+    [BeginDate] [DATE] NOT NULL,
+    [EducationOrganizationId] [INT] NOT NULL,
+    [ResponsibilityDescriptorId] [INT] NOT NULL,
+    [StudentUSI] [INT] NOT NULL,
+    [MunicipalCode] [NVARCHAR](4) NOT NULL,
+    [EighthTechnologicalLiteracyDescriptorId] [INT] NULL,
+    [MilitaryConnectedStudentDescriptorId] [INT] NULL,
+    [HasHealthInsurance] [BIT] NULL,
+    [HealthInsuranceProvider] [NVARCHAR](50) NULL,
+    [BridgeYearParticipationStatusDescriptorId] [INT] NULL,
+    [LocalIdentificationNumber] [NVARCHAR](20) NULL,
+    [CityOfBirth] [NVARCHAR](30) NULL,
+    [StateOfBirthStateAbbreviationDescriptorId] [INT] NULL,
+    [HispanicLatinoEthnicity] [BIT] NULL,
+    [DistrictStatus] [NVARCHAR](1) NULL,
+    [EnrollmentType] [NVARCHAR](1) NULL,
+    [CountyCodeResident] [NVARCHAR](2) NULL,
+    [DistrictCodeResident] [NVARCHAR](2) NULL,
+    [SchoolCodeResident] [NVARCHAR](2) NULL,
+    [DistrictEntryDate] [DATE] NULL,
+    [CountyCodeReceiving] [NVARCHAR](2) NULL,
+    [DistrictCodeReceiving] [NVARCHAR](2) NULL,
+    [SchoolCodeReceiving] [NVARCHAR](2) NULL,
+    [CountyCodeAttending] [NVARCHAR](2) NULL,
+    [DistrictCodeAttending] [NVARCHAR](2) NULL,
+    [SchoolCodeAttending] [NVARCHAR](2) NULL,
+    [YearOfGraduation] [DATE] NULL,
+    [SchoolEntryDate] [DATE] NULL,
+    [SchoolExitDate] [DATE] NULL,
+    [ExitWithdrawTypeDescriptorId] [INT] NULL,
+    [TuitionCodeDescriptorId] [INT] NULL,
+    [GradeLevelDescriptorId] [INT] NULL,
+    [EducationPlanDescriptorId] [INT] NULL,
+    [Retained] [BIT] NULL,
+    [DisabilityDescriptorId] [INT] NULL,
+    [ELLIdentificationDate] [DATE] NULL,
+    [ELLExitDate] [DATE] NULL,
+    [NonPublicDescriptorId] [INT] NULL,
+    [ResidentMunicipalCode] [NVARCHAR](4) NULL,
+    [ELAGraduationPathwayIndicatorDescriptorId] [INT] NULL,
+    [MathGraduationPathwayIndicatorDescriptorId] [INT] NULL,
+    [FederalHSMathTestingReqDescriptorId] [INT] NULL,
+    [LanguageInstructionProgramServiceDescriptorId] [INT] NULL,
+    [WorldLanguageAssessmentDescriptorId] [INT] NULL,
+    [WorldLanguagesAssessedLanguageDescriptorId] [INT] NULL,
+    [GiftedAndTalentedStudent] [BIT] NULL,
+    [InternetAccessTypeInResidenceDescriptorId] [INT] NULL,
+    [RemoteDaysPresent] [INT] NULL,
+    [RemoteDaysAbsent] [INT] NULL,
+    [PrimaryLearningDeviceAccessDescriptorId] [INT] NULL,
+    [PrimaryLearningDeviceAwayFromSchoolDescriptorId] [INT] NULL,
+    [IEPGraduationCourseRequirement] [NVARCHAR](1) NULL,
+    [IEPGraduationAttendance] [NVARCHAR](1) NULL,
+    [LIEPLanguageOfInstructionLanguageDescriptorId] [INT] NULL,
+    [CityOfResidence] [NVARCHAR](30) NULL,
+    [HomeLanguageDescriptorId] [INT] NULL,
+    [Homeless] [BIT] NULL,
+    [HomelessPrimaryNighttimeResidenceDescriptorId] [INT] NULL,
+    [AlternativeEducationProgram] [BIT] NULL,
+    [TitleIScience] [BIT] NULL,
+    [TitleIMath] [BIT] NULL,
+    [TitleILanguage] [BIT] NULL,
+    [IsEnrolled] [BIT] NULL,
+    [EntryTypeDescriptorId] [INT] NULL,
+    [DaysOpen] [INT] NULL,
+    [NumberOfDaysPresent] [INT] NULL,
+    [NumberOfDaysAb] [INT] NULL,
+    [NumberOfStateExcusedAbsences] [INT] NULL,
+    [ReportedSharedVoc] [BIT] NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
+    CONSTRAINT [StudentEducationOrganizationResponsibilityAssociationExtension_PK] PRIMARY KEY CLUSTERED (
+        [BeginDate] ASC,
+        [EducationOrganizationId] ASC,
+        [ResponsibilityDescriptorId] ASC,
+        [StudentUSI] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [newjerseysmart].[StudentEducationOrganizationResponsibilityAssociationExtension] ADD CONSTRAINT [StudentEducationOrganizationResponsibilityAssociationExtension_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
+GO
+
+-- Table [newjerseysmart].[StudentEducationOrganizationResponsibilityAssociationRace] --
+CREATE TABLE [newjerseysmart].[StudentEducationOrganizationResponsibilityAssociationRace] (
+    [BeginDate] [DATE] NOT NULL,
+    [EducationOrganizationId] [INT] NOT NULL,
+    [RaceDescriptorId] [INT] NOT NULL,
+    [ResponsibilityDescriptorId] [INT] NOT NULL,
+    [StudentUSI] [INT] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
+    CONSTRAINT [StudentEducationOrganizationResponsibilityAssociationRace_PK] PRIMARY KEY CLUSTERED (
+        [BeginDate] ASC,
+        [EducationOrganizationId] ASC,
+        [RaceDescriptorId] ASC,
+        [ResponsibilityDescriptorId] ASC,
+        [StudentUSI] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [newjerseysmart].[StudentEducationOrganizationResponsibilityAssociationRace] ADD CONSTRAINT [StudentEducationOrganizationResponsibilityAssociationRace_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
+GO
+
+-- Table [newjerseysmart].[StudentEducationOrganizationResponsibilityAssociationStudentCharacteristic] --
+CREATE TABLE [newjerseysmart].[StudentEducationOrganizationResponsibilityAssociationStudentCharacteristic] (
+    [BeginDate] [DATE] NOT NULL,
+    [EducationOrganizationId] [INT] NOT NULL,
+    [ResponsibilityDescriptorId] [INT] NOT NULL,
+    [StudentCharacteristicDescriptorId] [INT] NOT NULL,
+    [StudentUSI] [INT] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
+    CONSTRAINT [StudentEducationOrganizationResponsibilityAssociationStudentCharacteristic_PK] PRIMARY KEY CLUSTERED (
+        [BeginDate] ASC,
+        [EducationOrganizationId] ASC,
+        [ResponsibilityDescriptorId] ASC,
+        [StudentCharacteristicDescriptorId] ASC,
+        [StudentUSI] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [newjerseysmart].[StudentEducationOrganizationResponsibilityAssociationStudentCharacteristic] ADD CONSTRAINT [StudentEducationOrganizationResponsibilityAssociationStudentCharacteristic_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
 GO
 
 -- Table [newjerseysmart].[StudentLanguageInstructionProgramAssociationExtension] --
@@ -108,7 +243,7 @@ CREATE TABLE [newjerseysmart].[StudentSchoolAssociationExtension] (
     [EntryDate] [DATE] NOT NULL,
     [SchoolId] [INT] NOT NULL,
     [StudentUSI] [INT] NOT NULL,
-    [ResidentSchool] [NVARCHAR](9) NOT NULL,
+    [ResidentSchool] [NVARCHAR](4) NOT NULL,
     [TuitionCodeDescriptorId] [INT] NULL,
     [NonPublicDescriptorId] [INT] NULL,
     [FederalHSMathTestingReqDescriptorId] [INT] NULL,
@@ -154,6 +289,15 @@ CREATE TABLE [newjerseysmart].[TuitionCodeDescriptor] (
     [TuitionCodeDescriptorId] [INT] NOT NULL,
     CONSTRAINT [TuitionCodeDescriptor_PK] PRIMARY KEY CLUSTERED (
         [TuitionCodeDescriptorId] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+-- Table [newjerseysmart].[WorldLanguageAssessmentDescriptor] --
+CREATE TABLE [newjerseysmart].[WorldLanguageAssessmentDescriptor] (
+    [WorldLanguageAssessmentDescriptorId] [INT] NOT NULL,
+    CONSTRAINT [WorldLanguageAssessmentDescriptor_PK] PRIMARY KEY CLUSTERED (
+        [WorldLanguageAssessmentDescriptorId] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO

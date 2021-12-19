@@ -2,7 +2,7 @@
   string ResidentSchool
     documentation "The school (9 digit CDS code) that the student would attend based upon their permanent or other home address."
     is required
-    max length 9
+    max length 4
   descriptor TuitionCode
     documentation "An indicator of the source of payment for a student."
     is optional
@@ -16,5 +16,6 @@
     documentation "An indication if and how a student met the English graduation assessment requirements.  "
     is optional
   descriptor MathGraduationPathwayIndicator
-      documentation "An indication if and how a student met the math graduation assessment requirements."
-      is optional
+    documentation "An indication if and how a student met the math graduation assessment requirements."
+    is optional
+  

@@ -1,3 +1,10 @@
+CREATE TABLE [tracked_deletes_newjerseysmart].[BridgeYearParticipationStatusDescriptor]
+(
+       BridgeYearParticipationStatusDescriptorId [INT] NOT NULL,
+       Id uniqueidentifier NOT NULL,
+       ChangeVersion bigint NOT NULL,
+       CONSTRAINT PK_BridgeYearParticipationStatusDescriptor PRIMARY KEY CLUSTERED (ChangeVersion)
+)
 CREATE TABLE [tracked_deletes_newjerseysmart].[ELAGraduationPathwayIndicatorDescriptor]
 (
        ELAGraduationPathwayIndicatorDescriptorId [INT] NOT NULL,
@@ -53,4 +60,11 @@ CREATE TABLE [tracked_deletes_newjerseysmart].[TuitionCodeDescriptor]
        Id uniqueidentifier NOT NULL,
        ChangeVersion bigint NOT NULL,
        CONSTRAINT PK_TuitionCodeDescriptor PRIMARY KEY CLUSTERED (ChangeVersion)
+)
+CREATE TABLE [tracked_deletes_newjerseysmart].[WorldLanguageAssessmentDescriptor]
+(
+       WorldLanguageAssessmentDescriptorId [INT] NOT NULL,
+       Id uniqueidentifier NOT NULL,
+       ChangeVersion bigint NOT NULL,
+       CONSTRAINT PK_WorldLanguageAssessmentDescriptor PRIMARY KEY CLUSTERED (ChangeVersion)
 )

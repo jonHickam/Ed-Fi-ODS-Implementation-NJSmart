@@ -10,6 +10,17 @@
   <xs:annotation>
     <xs:documentation>===== Descriptors =====</xs:documentation>
   </xs:annotation>
+  <xs:complexType name="EXTENSION-BridgeYearParticipationStatusDescriptor">
+    <xs:annotation>
+      <xs:documentation>An indication of whether the student plans to or is currently participating in the “Bridge Year Pilot Program.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="EXTENSION-EighthTechnologicalLiteracyDescriptor">
     <xs:annotation>
       <xs:documentation>This data element is an indication of whether the student has met eighth grade technological proficiency.</xs:documentation>
@@ -98,6 +109,17 @@
       <xs:extension base="DescriptorType" />
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="EXTENSION-WorldLanguageAssessmentDescriptor">
+    <xs:annotation>
+      <xs:documentation>The World Language Assessment taken by the student</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
   <xs:annotation>
     <xs:documentation>===== Associations =====</xs:documentation>
   </xs:annotation>
@@ -140,6 +162,454 @@
           <xs:element name="HealthInsuranceProvider" type="EXTENSION-HealthInsuranceProvider" minOccurs="0">
             <xs:annotation>
               <xs:documentation>The name of the health insurance provider for that student.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="BridgeYearParticipationStatus" type="EXTENSION-BridgeYearParticipationStatusDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>An indication of whether the student plans to or is currently participating in the “Bridge Year Pilot Program.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-BridgeYearParticipationStatusDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="WorldLanguageAssessment" type="EXTENSION-WorldLanguageAssessmentDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The World Language Assessment taken by the student</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-WorldLanguageAssessmentDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ResidencyStatus" type="ResidencyStatusDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>aka InDistrictPlacement</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>ResidencyStatusDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-StudentEducationOrganizationResponsibilityAssociationExtension">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Association</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="StudentEducationOrganizationResponsibilityAssociation">
+        <xs:sequence>
+          <xs:element name="MunicipalCode" type="EXTENSION-MunicipalCode">
+            <xs:annotation>
+              <xs:documentation>The resident municipality (4 digit code) of the student</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="EighthTechnologicalLiteracy" type="EXTENSION-EighthTechnologicalLiteracyDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>This data element is an indication of whether the student has met eighth grade technological proficiency.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-EighthTechnologicalLiteracyDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="MilitaryConnectedStudent" type="EXTENSION-MilitaryConnectedStudentDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>An indication that the student’s parent or guardian is on Active Duty, in the National Guard, or in the Reserve components of the United States military services.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-MilitaryConnectedStudentDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="HasHealthInsurance" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicates if the student has health insurance.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="HealthInsuranceProvider" type="EXTENSION-HealthInsuranceProvider" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The name of the health insurance provider for that student.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="BridgeYearParticipationStatus" type="EXTENSION-BridgeYearParticipationStatusDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>An indication of whether the student plans to or is currently participating in the “Bridge Year Pilot Program.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-BridgeYearParticipationStatusDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="LocalIdentificationNumber" type="EXTENSION-LocalIdentificationNumber" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>A number assigned and maintained by the local school district that is unique for each student.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CityOfBirth" type="EXTENSION-CityOfBirth" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The name of the city or town (or comparable unit) in which the student was born</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="StateOfBirthStateAbbreviation" type="StateAbbreviationDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The name of the state in which the student was born.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>StateAbbreviationDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="HispanicLatinoEthnicity" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>student ethnicity</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Race" type="RaceDescriptorReferenceType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>student race</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>RaceDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="DistrictStatus" type="EXTENSION-DistrictStatus" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The student’s current enrollment status within a district</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="EnrollmentType" type="EXTENSION-EnrollmentType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The amount of the school day a student is enrolled at attending school</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CountyCodeResident" type="EXTENSION-CountyCodeResident" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The New Jersey county in which the student resides.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="DistrictCodeResident" type="EXTENSION-DistrictCodeResident" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The resident district of the student</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="SchoolCodeResident" type="EXTENSION-SchoolCodeResident" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The resident school in which a student would attend based upon their permanent or other home address</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="DistrictEntryDate" type="xs:date" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>the date which a student is enrolled in the district</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CountyCodeReceiving" type="EXTENSION-CountyCodeReceiving" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The New Jersey county in which the student is received in a sending/receiving relationship.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="DistrictCodeReceiving" type="EXTENSION-DistrictCodeReceiving" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The receiving district of the student in a sending/receiving relationship</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="SchoolCodeReceiving" type="EXTENSION-SchoolCodeReceiving" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The receiving school in a sending/receiving relationship.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CountyCodeAttending" type="EXTENSION-CountyCodeAttending" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The county in which the student is attending school.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="DistrictCodeAttending" type="EXTENSION-DistrictCodeAttending" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The district in which the student is attending school</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="SchoolCodeAttending" type="EXTENSION-SchoolCodeAttending" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The school in which a student is attending</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="YearOfGraduation" type="xs:date" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The projected year of the student’s high school graduation</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="SchoolEntryDate" type="xs:date" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The year, month, and day on which a student is enrolled in their attending school</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="SchoolExitDate" type="xs:date" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The year, month and day of the first day after the date the student last attended school when the student exits during the school year</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ExitWithdrawType" type="ExitWithdrawTypeDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>An indication of the reason why the student exited from membership in the school during the school year.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>ExitWithdrawTypeDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="TuitionCode" type="EXTENSION-TuitionCodeDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>An indicator of the source of payment for a student.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-TuitionCodeDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="StudentCharacteristic" type="StudentCharacteristicDescriptorReferenceType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>Various characteristics of the student</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>StudentCharacteristicDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="GradeLevel" type="GradeLevelDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Student grade</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>GradeLevelDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="EducationPlan" type="EducationPlanDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>programTypeCode- The primary program of instruction for the student</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EducationPlanDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Retained" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>An indication that the student is repeating their current grade leve</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Disability" type="DisabilityDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>SpecialEducationClassification</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>DisabilityDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ELLIdentificationDate" type="xs:date" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The year, month, and day on which a student is identified by the district as being in need of English language learner (ELL) service</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ELLExitDate" type="xs:date" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The year, month, and day on which a student successfully completes an English language learner (ELL) program</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="NonPublic" type="EXTENSION-NonPublicDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>An indication of whether or not a student is receiving or not receiving services under an individual service plan when that student has been parentally placed into a sectarian or non-sectarian private school and also has been determined eligible for special education and related services.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-NonPublicDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ResidentMunicipalCode" type="EXTENSION-ResidentMunicipalCode" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The resident municipality of the student</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ELAGraduationPathwayIndicator" type="EXTENSION-ELAGraduationPathwayIndicatorDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>An indication if and how a student met the English graduation assessment requirements.  </xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-ELAGraduationPathwayIndicatorDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="MathGraduationPathwayIndicator" type="EXTENSION-MathGraduationPathwayIndicatorDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>An indication if and how a student met the math graduation assessment requirements.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-MathGraduationPathwayIndicatorDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="FederalHSMathTestingReq" type="EXTENSION-FederalHSMathTestingReqDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>This field indicates whether a student has met the federal requirement to take Algebra I (or one of the exceptions noted below) while in high school.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-FederalHSMathTestingReqDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="LanguageInstructionProgramService" type="LanguageInstructionProgramServiceDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The course in which an English language learner is placed in order to develop and attain English proficiency</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>LanguageInstructionProgramServiceDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="WorldLanguageAssessment" type="EXTENSION-WorldLanguageAssessmentDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The World Language Assessment taken by the student</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-WorldLanguageAssessmentDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="WorldLanguagesAssessedLanguage" type="LanguageDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The specific language other than English that is being assessed</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>LanguageDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="GiftedAndTalentedStudent" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>is the student in a Gifted and Talented Program</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="InternetAccessTypeInResidence" type="InternetAccessTypeInResidenceDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>StudentInternetConnectivity</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>InternetAccessTypeInResidenceDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="RemoteDaysPresent" type="xs:int" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The number of days a student attended school</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="RemoteDaysAbsent" type="xs:int" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The number of days a student is absent</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PrimaryLearningDeviceAccess" type="PrimaryLearningDeviceAccessDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>StudentDeviceOwner</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>PrimaryLearningDeviceAccessDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PrimaryLearningDeviceAwayFromSchool" type="PrimaryLearningDeviceAwayFromSchoolDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>StudentDeviceType</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>PrimaryLearningDeviceAwayFromSchoolDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="IEPGraduationCourseRequirement" type="EXTENSION-IEPGraduationCourseRequirement" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>An indication  the IEP of a student with a disability contains an exemption or modification to the state course</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="IEPGraduationAttendance" type="EXTENSION-IEPGraduationAttendance" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>An indication of whether the IEPof a student with a disability contains an exemption or modification to the local attendance requirement</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="LIEPLanguageOfInstructionLanguage" type="LanguageDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The language of instruction for the Language Instruction Educational Program (LIEP) course in</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>LanguageDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CityOfResidence" type="EXTENSION-CityOfResidence" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The name of the city or town of the student’s home address</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="HomeLanguageLanguage" type="LanguageDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The name of the primary language or dialect that students use to communicate at home.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>LanguageDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Homeless" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>indication of whether a student is homeless.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="HomelessPrimaryNighttimeResidence" type="HomelessPrimaryNighttimeResidenceDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The primary nighttime residence of the student at the time the student is identified as homeless.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>HomelessPrimaryNighttimeResidenceDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="AlternativeEducationProgram" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>An indication that the student is enrolled in an alternative education program </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="TitleIScience" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Student is receiving services in support of Science instruction</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="TitleIMath" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Student is receiving services in support of math instruction</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="TitleILanguage" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Student is receiving services in support of Language Arts instruction</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="IsEnrolled" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>SchoolStatus- is student currently enrolled</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="EntryType" type="EntryTypeDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>SchoolEntryCode </xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EntryTypeDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="DaysOpen" type="xs:int" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The number of days the program of instruction was in session for the entire year</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="NumberOfDaysPresent" type="xs:int" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The number of school days in session a student is recorded as present</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="NumberOfDaysAb" type="xs:int" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The number of days a student is absent</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="NumberOfStateExcusedAbsences" type="xs:int" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The number of days a student is absent for a State-excused reason</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ReportedSharedVoc" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>An indication that the student is a shared-time vocational school student being reported by the county vocational school.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -257,6 +727,15 @@
   <xs:annotation>
     <xs:documentation>===== Extended Descriptor Reference Types =====</xs:documentation>
   </xs:annotation>
+  <xs:simpleType name="EXTENSION-BridgeYearParticipationStatusDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>An indication of whether the student plans to or is currently participating in the “Bridge Year Pilot Program.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
   <xs:simpleType name="EXTENSION-EighthTechnologicalLiteracyDescriptorReferenceType">
     <xs:annotation>
       <xs:documentation>This data element is an indication of whether the student has met eighth grade technological proficiency.</xs:documentation>
@@ -329,6 +808,15 @@
     </xs:annotation>
     <xs:restriction base="DescriptorReferenceType" />
   </xs:simpleType>
+  <xs:simpleType name="EXTENSION-WorldLanguageAssessmentDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>The World Language Assessment taken by the student</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
   <xs:annotation>
     <xs:documentation>===== Common Types =====</xs:documentation>
   </xs:annotation>
@@ -338,6 +826,126 @@
   <xs:annotation>
     <xs:documentation>===== String Simple Types =====</xs:documentation>
   </xs:annotation>
+  <xs:simpleType name="EXTENSION-CityOfBirth">
+    <xs:annotation>
+      <xs:documentation>The name of the city or town (or comparable unit) in which the student was born</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="30" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-CityOfResidence">
+    <xs:annotation>
+      <xs:documentation>The name of the city or town of the student’s home address</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="30" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-CountyCodeAttending">
+    <xs:annotation>
+      <xs:documentation>The county in which the student is attending school.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="2" />
+      <xs:maxLength value="2" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-CountyCodeReceiving">
+    <xs:annotation>
+      <xs:documentation>The New Jersey county in which the student is received in a sending/receiving relationship.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="2" />
+      <xs:maxLength value="2" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-CountyCodeResident">
+    <xs:annotation>
+      <xs:documentation>The New Jersey county in which the student resides.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="2" />
+      <xs:maxLength value="2" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-DistrictCodeAttending">
+    <xs:annotation>
+      <xs:documentation>The district in which the student is attending school</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="2" />
+      <xs:maxLength value="2" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-DistrictCodeReceiving">
+    <xs:annotation>
+      <xs:documentation>The receiving district of the student in a sending/receiving relationship</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="2" />
+      <xs:maxLength value="2" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-DistrictCodeResident">
+    <xs:annotation>
+      <xs:documentation>The resident district of the student</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="2" />
+      <xs:maxLength value="2" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-DistrictStatus">
+    <xs:annotation>
+      <xs:documentation>The student’s current enrollment status within a district</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="1" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-EnrollmentType">
+    <xs:annotation>
+      <xs:documentation>The amount of the school day a student is enrolled at attending school</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="1" />
+    </xs:restriction>
+  </xs:simpleType>
   <xs:simpleType name="EXTENSION-HealthInsuranceProvider">
     <xs:annotation>
       <xs:documentation>The name of the health insurance provider for that student.</xs:documentation>
@@ -347,6 +955,42 @@
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:maxLength value="50" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-IEPGraduationAttendance">
+    <xs:annotation>
+      <xs:documentation>An indication of whether the IEPof a student with a disability contains an exemption or modification to the local attendance requirement</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="1" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-IEPGraduationCourseRequirement">
+    <xs:annotation>
+      <xs:documentation>An indication  the IEP of a student with a disability contains an exemption or modification to the state course</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="1" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-LocalIdentificationNumber">
+    <xs:annotation>
+      <xs:documentation>A number assigned and maintained by the local school district that is unique for each student.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="20" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="EXTENSION-MunicipalCode">
@@ -360,6 +1004,18 @@
       <xs:maxLength value="4" />
     </xs:restriction>
   </xs:simpleType>
+  <xs:simpleType name="EXTENSION-ResidentMunicipalCode">
+    <xs:annotation>
+      <xs:documentation>The resident municipality of the student</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="4" />
+      <xs:maxLength value="4" />
+    </xs:restriction>
+  </xs:simpleType>
   <xs:simpleType name="EXTENSION-ResidentSchool">
     <xs:annotation>
       <xs:documentation>The school (9 digit CDS code) that the student would attend based upon their permanent or other home address.</xs:documentation>
@@ -368,7 +1024,43 @@
       </xs:appinfo>
     </xs:annotation>
     <xs:restriction base="xs:string">
-      <xs:maxLength value="9" />
+      <xs:maxLength value="4" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-SchoolCodeAttending">
+    <xs:annotation>
+      <xs:documentation>The school in which a student is attending</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="2" />
+      <xs:maxLength value="2" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-SchoolCodeReceiving">
+    <xs:annotation>
+      <xs:documentation>The receiving school in a sending/receiving relationship.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="2" />
+      <xs:maxLength value="2" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-SchoolCodeResident">
+    <xs:annotation>
+      <xs:documentation>The resident school in which a student would attend based upon their permanent or other home address</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="2" />
+      <xs:maxLength value="2" />
     </xs:restriction>
   </xs:simpleType>
   <xs:annotation>

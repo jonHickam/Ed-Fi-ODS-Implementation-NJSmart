@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <AggregateExtensions logicalSchema="NewJerseySmart" schema="newjerseysmart">
+  <Aggregate root="BridgeYearParticipationStatusDescriptor">
+    <Entity table="BridgeYearParticipationStatusDescriptor" isA="Descriptor" schema="newjerseysmart"/>
+  </Aggregate>
   <Aggregate root="ELAGraduationPathwayIndicatorDescriptor">
     <Entity table="ELAGraduationPathwayIndicatorDescriptor" isA="Descriptor" schema="newjerseysmart"/>
   </Aggregate>
@@ -24,4 +27,11 @@
   <Aggregate root="TuitionCodeDescriptor">
     <Entity table="TuitionCodeDescriptor" isA="Descriptor" schema="newjerseysmart"/>
   </Aggregate>
+  <Aggregate root="WorldLanguageAssessmentDescriptor">
+    <Entity table="WorldLanguageAssessmentDescriptor" isA="Descriptor" schema="newjerseysmart"/>
+  </Aggregate>
+  <AggregateExtension root="StudentEducationOrganizationResponsibilityAssociation">
+    <Entity table="StudentEducationOrganizationResponsibilityAssociationRace" schema="newjerseysmart"/>
+    <Entity table="StudentEducationOrganizationResponsibilityAssociationStudentCharacteristic" schema="newjerseysmart"/>
+  </AggregateExtension>
 </AggregateExtensions>

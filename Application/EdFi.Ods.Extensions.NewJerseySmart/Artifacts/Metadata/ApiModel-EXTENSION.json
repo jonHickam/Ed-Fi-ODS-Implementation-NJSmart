@@ -10,6 +10,18 @@
     {
       "aggregateRootEntityName": {
         "schema": "newjerseysmart",
+        "name": "BridgeYearParticipationStatusDescriptor"
+      },
+      "aggregateEntityNames": [
+        {
+          "schema": "newjerseysmart",
+          "name": "BridgeYearParticipationStatusDescriptor"
+        }
+      ]
+    },
+    {
+      "aggregateRootEntityName": {
+        "schema": "newjerseysmart",
         "name": "EighthTechnologicalLiteracyDescriptor"
       },
       "aggregateEntityNames": [
@@ -102,10 +114,64 @@
           "name": "TuitionCodeDescriptor"
         }
       ]
+    },
+    {
+      "aggregateRootEntityName": {
+        "schema": "newjerseysmart",
+        "name": "WorldLanguageAssessmentDescriptor"
+      },
+      "aggregateEntityNames": [
+        {
+          "schema": "newjerseysmart",
+          "name": "WorldLanguageAssessmentDescriptor"
+        }
+      ]
     }
   ],
-  "aggregateExtensionDefinitions": [],
+  "aggregateExtensionDefinitions": [
+    {
+      "aggregateRootEntityName": {
+        "schema": "edfi",
+        "name": "StudentEducationOrganizationResponsibilityAssociation"
+      },
+      "extensionEntityNames": [
+        {
+          "schema": "newjerseysmart",
+          "name": "StudentEducationOrganizationResponsibilityAssociationRace"
+        },
+        {
+          "schema": "newjerseysmart",
+          "name": "StudentEducationOrganizationResponsibilityAssociationStudentCharacteristic"
+        }
+      ]
+    }
+  ],
   "entityDefinitions": [
+    {
+      "schema": "newjerseysmart",
+      "name": "BridgeYearParticipationStatusDescriptor",
+      "locallyDefinedProperties": [],
+      "identifiers": [
+        {
+          "identifierName": "BridgeYearParticipationStatusDescriptor_PK",
+          "identifyingPropertyNames": [
+            "BridgeYearParticipationStatusDescriptorId"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "BridgeYearParticipationStatusDescriptor_PK",
+            "postgreSql": "BridgeYearParticipationStatusDescriptor_PK"
+          }
+        }
+      ],
+      "isAbstract": false,
+      "description": "An indication of whether the student plans to or is currently participating in the “Bridge Year Pilot Program.",
+      "tableNames": {
+        "sqlServer": "BridgeYearParticipationStatusDescriptor",
+        "postgreSql": "BridgeYearParticipationStatusDescriptor"
+      }
+    },
     {
       "schema": "newjerseysmart",
       "name": "EighthTechnologicalLiteracyDescriptor",
@@ -353,6 +419,860 @@
     },
     {
       "schema": "newjerseysmart",
+      "name": "StudentEducationOrganizationResponsibilityAssociationExtension",
+      "locallyDefinedProperties": [
+        {
+          "propertyName": "AlternativeEducationProgram",
+          "propertyType": {
+            "dbType": "Boolean",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "An indication that the student is enrolled in an alternative education program ",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "AlternativeEducationProgram",
+            "postgreSql": "AlternativeEducationProgram"
+          }
+        },
+        {
+          "propertyName": "CityOfBirth",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 30,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The name of the city or town (or comparable unit) in which the student was born",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CityOfBirth",
+            "postgreSql": "CityOfBirth"
+          }
+        },
+        {
+          "propertyName": "CityOfResidence",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 30,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The name of the city or town of the student’s home address",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CityOfResidence",
+            "postgreSql": "CityOfResidence"
+          }
+        },
+        {
+          "propertyName": "CountyCodeAttending",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 2,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The county in which the student is attending school.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CountyCodeAttending",
+            "postgreSql": "CountyCodeAttending"
+          }
+        },
+        {
+          "propertyName": "CountyCodeReceiving",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 2,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The New Jersey county in which the student is received in a sending/receiving relationship.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CountyCodeReceiving",
+            "postgreSql": "CountyCodeReceiving"
+          }
+        },
+        {
+          "propertyName": "CountyCodeResident",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 2,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The New Jersey county in which the student resides.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CountyCodeResident",
+            "postgreSql": "CountyCodeResident"
+          }
+        },
+        {
+          "propertyName": "CreateDate",
+          "propertyType": {
+            "dbType": "DateTime2",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
+        },
+        {
+          "propertyName": "DaysOpen",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The number of days the program of instruction was in session for the entire year",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "DaysOpen",
+            "postgreSql": "DaysOpen"
+          }
+        },
+        {
+          "propertyName": "DistrictCodeAttending",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 2,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The district in which the student is attending school",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "DistrictCodeAttending",
+            "postgreSql": "DistrictCodeAttending"
+          }
+        },
+        {
+          "propertyName": "DistrictCodeReceiving",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 2,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The receiving district of the student in a sending/receiving relationship",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "DistrictCodeReceiving",
+            "postgreSql": "DistrictCodeReceiving"
+          }
+        },
+        {
+          "propertyName": "DistrictCodeResident",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 2,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The resident district of the student",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "DistrictCodeResident",
+            "postgreSql": "DistrictCodeResident"
+          }
+        },
+        {
+          "propertyName": "DistrictEntryDate",
+          "propertyType": {
+            "dbType": "Date",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "the date which a student is enrolled in the district",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "DistrictEntryDate",
+            "postgreSql": "DistrictEntryDate"
+          }
+        },
+        {
+          "propertyName": "DistrictStatus",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 1,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The student’s current enrollment status within a district",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "DistrictStatus",
+            "postgreSql": "DistrictStatus"
+          }
+        },
+        {
+          "propertyName": "ELLExitDate",
+          "propertyType": {
+            "dbType": "Date",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The year, month, and day on which a student successfully completes an English language learner (ELL) program",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ELLExitDate",
+            "postgreSql": "ELLExitDate"
+          }
+        },
+        {
+          "propertyName": "ELLIdentificationDate",
+          "propertyType": {
+            "dbType": "Date",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The year, month, and day on which a student is identified by the district as being in need of English language learner (ELL) service",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ELLIdentificationDate",
+            "postgreSql": "ELLIdentificationDate"
+          }
+        },
+        {
+          "propertyName": "EnrollmentType",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 1,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The amount of the school day a student is enrolled at attending school",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EnrollmentType",
+            "postgreSql": "EnrollmentType"
+          }
+        },
+        {
+          "propertyName": "GiftedAndTalentedStudent",
+          "propertyType": {
+            "dbType": "Boolean",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "is the student in a Gifted and Talented Program",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "GiftedAndTalentedStudent",
+            "postgreSql": "GiftedAndTalentedStudent"
+          }
+        },
+        {
+          "propertyName": "HasHealthInsurance",
+          "propertyType": {
+            "dbType": "Boolean",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "Indicates if the student has health insurance.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "HasHealthInsurance",
+            "postgreSql": "HasHealthInsurance"
+          }
+        },
+        {
+          "propertyName": "HealthInsuranceProvider",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 50,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The name of the health insurance provider for that student.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "HealthInsuranceProvider",
+            "postgreSql": "HealthInsuranceProvider"
+          }
+        },
+        {
+          "propertyName": "HispanicLatinoEthnicity",
+          "propertyType": {
+            "dbType": "Boolean",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "student ethnicity",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "HispanicLatinoEthnicity",
+            "postgreSql": "HispanicLatinoEthnicity"
+          }
+        },
+        {
+          "propertyName": "Homeless",
+          "propertyType": {
+            "dbType": "Boolean",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "indication of whether a student is homeless.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Homeless",
+            "postgreSql": "Homeless"
+          }
+        },
+        {
+          "propertyName": "IEPGraduationAttendance",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 1,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "An indication of whether the IEPof a student with a disability contains an exemption or modification to the local attendance requirement",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "IEPGraduationAttendance",
+            "postgreSql": "IEPGraduationAttendance"
+          }
+        },
+        {
+          "propertyName": "IEPGraduationCourseRequirement",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 1,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "An indication  the IEP of a student with a disability contains an exemption or modification to the state course",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "IEPGraduationCourseRequirement",
+            "postgreSql": "IEPGraduationCourseRequirement"
+          }
+        },
+        {
+          "propertyName": "IsEnrolled",
+          "propertyType": {
+            "dbType": "Boolean",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "SchoolStatus- is student currently enrolled",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "IsEnrolled",
+            "postgreSql": "IsEnrolled"
+          }
+        },
+        {
+          "propertyName": "LocalIdentificationNumber",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 20,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "A number assigned and maintained by the local school district that is unique for each student.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "LocalIdentificationNumber",
+            "postgreSql": "LocalIdentificationNumber"
+          }
+        },
+        {
+          "propertyName": "MunicipalCode",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 4,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The resident municipality (4 digit code) of the student",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "MunicipalCode",
+            "postgreSql": "MunicipalCode"
+          }
+        },
+        {
+          "propertyName": "NumberOfDaysAb",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The number of days a student is absent",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "NumberOfDaysAb",
+            "postgreSql": "NumberOfDaysAb"
+          }
+        },
+        {
+          "propertyName": "NumberOfDaysPresent",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The number of school days in session a student is recorded as present",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "NumberOfDaysPresent",
+            "postgreSql": "NumberOfDaysPresent"
+          }
+        },
+        {
+          "propertyName": "NumberOfStateExcusedAbsences",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The number of days a student is absent for a State-excused reason",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "NumberOfStateExcusedAbsences",
+            "postgreSql": "NumberOfStateExcusedAbsences"
+          }
+        },
+        {
+          "propertyName": "RemoteDaysAbsent",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The number of days a student is absent",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "RemoteDaysAbsent",
+            "postgreSql": "RemoteDaysAbsent"
+          }
+        },
+        {
+          "propertyName": "RemoteDaysPresent",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The number of days a student attended school",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "RemoteDaysPresent",
+            "postgreSql": "RemoteDaysPresent"
+          }
+        },
+        {
+          "propertyName": "ReportedSharedVoc",
+          "propertyType": {
+            "dbType": "Boolean",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "An indication that the student is a shared-time vocational school student being reported by the county vocational school.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ReportedSharedVoc",
+            "postgreSql": "ReportedSharedVoc"
+          }
+        },
+        {
+          "propertyName": "ResidentMunicipalCode",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 4,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The resident municipality of the student",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ResidentMunicipalCode",
+            "postgreSql": "ResidentMunicipalCode"
+          }
+        },
+        {
+          "propertyName": "Retained",
+          "propertyType": {
+            "dbType": "Boolean",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "An indication that the student is repeating their current grade leve",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Retained",
+            "postgreSql": "Retained"
+          }
+        },
+        {
+          "propertyName": "SchoolCodeAttending",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 2,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The school in which a student is attending",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "SchoolCodeAttending",
+            "postgreSql": "SchoolCodeAttending"
+          }
+        },
+        {
+          "propertyName": "SchoolCodeReceiving",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 2,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The receiving school in a sending/receiving relationship.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "SchoolCodeReceiving",
+            "postgreSql": "SchoolCodeReceiving"
+          }
+        },
+        {
+          "propertyName": "SchoolCodeResident",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 2,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The resident school in which a student would attend based upon their permanent or other home address",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "SchoolCodeResident",
+            "postgreSql": "SchoolCodeResident"
+          }
+        },
+        {
+          "propertyName": "SchoolEntryDate",
+          "propertyType": {
+            "dbType": "Date",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The year, month, and day on which a student is enrolled in their attending school",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "SchoolEntryDate",
+            "postgreSql": "SchoolEntryDate"
+          }
+        },
+        {
+          "propertyName": "SchoolExitDate",
+          "propertyType": {
+            "dbType": "Date",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The year, month and day of the first day after the date the student last attended school when the student exits during the school year",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "SchoolExitDate",
+            "postgreSql": "SchoolExitDate"
+          }
+        },
+        {
+          "propertyName": "TitleILanguage",
+          "propertyType": {
+            "dbType": "Boolean",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "Student is receiving services in support of Language Arts instruction",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "TitleILanguage",
+            "postgreSql": "TitleILanguage"
+          }
+        },
+        {
+          "propertyName": "TitleIMath",
+          "propertyType": {
+            "dbType": "Boolean",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "Student is receiving services in support of math instruction",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "TitleIMath",
+            "postgreSql": "TitleIMath"
+          }
+        },
+        {
+          "propertyName": "TitleIScience",
+          "propertyType": {
+            "dbType": "Boolean",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "Student is receiving services in support of Science instruction",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "TitleIScience",
+            "postgreSql": "TitleIScience"
+          }
+        },
+        {
+          "propertyName": "YearOfGraduation",
+          "propertyType": {
+            "dbType": "Date",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The projected year of the student’s high school graduation",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "YearOfGraduation",
+            "postgreSql": "YearOfGraduation"
+          }
+        }
+      ],
+      "identifiers": [
+        {
+          "identifierName": "StudentEducationOrganizationResponsibilityAssociationExtension_PK",
+          "identifyingPropertyNames": [
+            "BeginDate",
+            "EducationOrganizationId",
+            "ResponsibilityDescriptorId",
+            "StudentUSI"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "StudentEducationOrganizationResponsibilityAssociationExtension_PK",
+            "postgreSql": "StudentEducationOrganizationResponsibilityAssociat_5a80ec_PK"
+          }
+        }
+      ],
+      "isAbstract": false,
+      "description": "",
+      "tableNames": {
+        "sqlServer": "StudentEducationOrganizationResponsibilityAssociationExtension",
+        "postgreSql": "StudentEducationOrganizationResponsibilityAssociationExtension"
+      }
+    },
+    {
+      "schema": "newjerseysmart",
+      "name": "StudentEducationOrganizationResponsibilityAssociationRace",
+      "locallyDefinedProperties": [
+        {
+          "propertyName": "CreateDate",
+          "propertyType": {
+            "dbType": "DateTime2",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
+        }
+      ],
+      "identifiers": [
+        {
+          "identifierName": "StudentEducationOrganizationResponsibilityAssociationRace_PK",
+          "identifyingPropertyNames": [
+            "BeginDate",
+            "EducationOrganizationId",
+            "RaceDescriptorId",
+            "ResponsibilityDescriptorId",
+            "StudentUSI"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "StudentEducationOrganizationResponsibilityAssociationRace_PK",
+            "postgreSql": "StudentEducationOrganizationResponsibilityAssociationRace_PK"
+          }
+        }
+      ],
+      "isAbstract": false,
+      "description": "student race",
+      "tableNames": {
+        "sqlServer": "StudentEducationOrganizationResponsibilityAssociationRace",
+        "postgreSql": "StudentEducationOrganizationResponsibilityAssociationRace"
+      }
+    },
+    {
+      "schema": "newjerseysmart",
+      "name": "StudentEducationOrganizationResponsibilityAssociationStudentCharacteristic",
+      "locallyDefinedProperties": [
+        {
+          "propertyName": "CreateDate",
+          "propertyType": {
+            "dbType": "DateTime2",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
+        }
+      ],
+      "identifiers": [
+        {
+          "identifierName": "StudentEducationOrganizationResponsibilityAssociationStudentCharacteristic_PK",
+          "identifyingPropertyNames": [
+            "BeginDate",
+            "EducationOrganizationId",
+            "ResponsibilityDescriptorId",
+            "StudentCharacteristicDescriptorId",
+            "StudentUSI"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "StudentEducationOrganizationResponsibilityAssociationStudentCharacteristic_PK",
+            "postgreSql": "StudentEducationOrganizationResponsibilityAssociat_f15efe_PK"
+          }
+        }
+      ],
+      "isAbstract": false,
+      "description": "Various characteristics of the student",
+      "tableNames": {
+        "sqlServer": "StudentEducationOrganizationResponsibilityAssociationStudentCharacteristic",
+        "postgreSql": "StudentEducationOrganizationResponsibilityAssociationStu_f15efe"
+      }
+    },
+    {
+      "schema": "newjerseysmart",
       "name": "StudentLanguageInstructionProgramAssociationExtension",
       "locallyDefinedProperties": [
         {
@@ -449,7 +1369,7 @@
           "propertyName": "ResidentSchool",
           "propertyType": {
             "dbType": "String",
-            "maxLength": 9,
+            "maxLength": 4,
             "precision": 0,
             "scale": 0,
             "isNullable": false
@@ -592,9 +1512,94 @@
         "sqlServer": "TuitionCodeDescriptor",
         "postgreSql": "TuitionCodeDescriptor"
       }
+    },
+    {
+      "schema": "newjerseysmart",
+      "name": "WorldLanguageAssessmentDescriptor",
+      "locallyDefinedProperties": [],
+      "identifiers": [
+        {
+          "identifierName": "WorldLanguageAssessmentDescriptor_PK",
+          "identifyingPropertyNames": [
+            "WorldLanguageAssessmentDescriptorId"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "WorldLanguageAssessmentDescriptor_PK",
+            "postgreSql": "WorldLanguageAssessmentDescriptor_PK"
+          }
+        }
+      ],
+      "isAbstract": false,
+      "description": "The World Language Assessment taken by the student",
+      "tableNames": {
+        "sqlServer": "WorldLanguageAssessmentDescriptor",
+        "postgreSql": "WorldLanguageAssessmentDescriptor"
+      }
     }
   ],
   "associationDefinitions": [
+    {
+      "fullName": {
+        "schema": "newjerseysmart",
+        "name": "FK_BridgeYearParticipationStatusDescriptor_Descriptor"
+      },
+      "cardinality": "OneToOneInheritance",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "Descriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "DescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": true,
+          "columnNames": {
+            "sqlServer": "DescriptorId",
+            "postgreSql": "DescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "BridgeYearParticipationStatusDescriptor"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "BridgeYearParticipationStatusDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": true,
+          "columnNames": {
+            "sqlServer": "BridgeYearParticipationStatusDescriptorId",
+            "postgreSql": "BridgeYearParticipationStatusDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_BridgeYearParticipationStatusDescriptor_Descriptor",
+        "postgreSql": "FK_6d0c1b_Descriptor"
+      },
+      "potentiallyLogical": false
+    },
     {
       "fullName": {
         "schema": "newjerseysmart",
@@ -958,6 +1963,66 @@
     {
       "fullName": {
         "schema": "newjerseysmart",
+        "name": "FK_StudentEducationOrganizationAssociationExtension_BridgeYearParticipationStatusDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "BridgeYearParticipationStatusDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "BridgeYearParticipationStatusDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "BridgeYearParticipationStatusDescriptorId",
+            "postgreSql": "BridgeYearParticipationStatusDescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "StudentEducationOrganizationAssociationExtension"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "BridgeYearParticipationStatusDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "An indication of whether the student plans to or is currently participating in the “Bridge Year Pilot Program.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "BridgeYearParticipationStatusDescriptorId",
+            "postgreSql": "BridgeYearParticipationStatusDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_StudentEducationOrganizationAssociationExtension_BridgeYearParticipationStatusDescriptor",
+        "postgreSql": "FK_2c2930_BridgeYearParticipationStatusDescriptor"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "newjerseysmart",
         "name": "FK_StudentEducationOrganizationAssociationExtension_EighthTechnologicalLiteracyDescriptor"
       },
       "cardinality": "OneToZeroOrMore",
@@ -1078,6 +2143,66 @@
     {
       "fullName": {
         "schema": "newjerseysmart",
+        "name": "FK_StudentEducationOrganizationAssociationExtension_ResidencyStatusDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "ResidencyStatusDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "ResidencyStatusDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ResidencyStatusDescriptorId",
+            "postgreSql": "ResidencyStatusDescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "StudentEducationOrganizationAssociationExtension"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "ResidencyStatusDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "aka InDistrictPlacement",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ResidencyStatusDescriptorId",
+            "postgreSql": "ResidencyStatusDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_StudentEducationOrganizationAssociationExtension_ResidencyStatusDescriptor",
+        "postgreSql": "FK_2c2930_ResidencyStatusDescriptor"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "newjerseysmart",
         "name": "FK_StudentEducationOrganizationAssociationExtension_StudentEducationOrganizationAssociation"
       },
       "cardinality": "OneToOneExtension",
@@ -1167,6 +2292,2051 @@
         "sqlServer": "FK_StudentEducationOrganizationAssociationExtension_StudentEducationOrganizationAssociation",
         "postgreSql": "FK_2c2930_StudentEducationOrganizationAssociation"
       }
+    },
+    {
+      "fullName": {
+        "schema": "newjerseysmart",
+        "name": "FK_StudentEducationOrganizationAssociationExtension_WorldLanguageAssessmentDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "WorldLanguageAssessmentDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "WorldLanguageAssessmentDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "WorldLanguageAssessmentDescriptorId",
+            "postgreSql": "WorldLanguageAssessmentDescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "StudentEducationOrganizationAssociationExtension"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "WorldLanguageAssessmentDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The World Language Assessment taken by the student",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "WorldLanguageAssessmentDescriptorId",
+            "postgreSql": "WorldLanguageAssessmentDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_StudentEducationOrganizationAssociationExtension_WorldLanguageAssessmentDescriptor",
+        "postgreSql": "FK_2c2930_WorldLanguageAssessmentDescriptor"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "newjerseysmart",
+        "name": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_BridgeYearParticipationStatusDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "BridgeYearParticipationStatusDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "BridgeYearParticipationStatusDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "BridgeYearParticipationStatusDescriptorId",
+            "postgreSql": "BridgeYearParticipationStatusDescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "StudentEducationOrganizationResponsibilityAssociationExtension"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "BridgeYearParticipationStatusDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "An indication of whether the student plans to or is currently participating in the “Bridge Year Pilot Program.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "BridgeYearParticipationStatusDescriptorId",
+            "postgreSql": "BridgeYearParticipationStatusDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_BridgeYearParticipationStatusDescriptor",
+        "postgreSql": "FK_5a80ec_BridgeYearParticipationStatusDescriptor"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "newjerseysmart",
+        "name": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_DisabilityDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "DisabilityDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "DisabilityDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "DisabilityDescriptorId",
+            "postgreSql": "DisabilityDescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "StudentEducationOrganizationResponsibilityAssociationExtension"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "DisabilityDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "SpecialEducationClassification",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "DisabilityDescriptorId",
+            "postgreSql": "DisabilityDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_DisabilityDescriptor",
+        "postgreSql": "FK_5a80ec_DisabilityDescriptor"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "newjerseysmart",
+        "name": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_EducationPlanDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "EducationPlanDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "EducationPlanDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationPlanDescriptorId",
+            "postgreSql": "EducationPlanDescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "StudentEducationOrganizationResponsibilityAssociationExtension"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "EducationPlanDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "programTypeCode- The primary program of instruction for the student",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationPlanDescriptorId",
+            "postgreSql": "EducationPlanDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_EducationPlanDescriptor",
+        "postgreSql": "FK_5a80ec_EducationPlanDescriptor"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "newjerseysmart",
+        "name": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_EighthTechnologicalLiteracyDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "EighthTechnologicalLiteracyDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "EighthTechnologicalLiteracyDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EighthTechnologicalLiteracyDescriptorId",
+            "postgreSql": "EighthTechnologicalLiteracyDescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "StudentEducationOrganizationResponsibilityAssociationExtension"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "EighthTechnologicalLiteracyDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "This data element is an indication of whether the student has met eighth grade technological proficiency.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EighthTechnologicalLiteracyDescriptorId",
+            "postgreSql": "EighthTechnologicalLiteracyDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_EighthTechnologicalLiteracyDescriptor",
+        "postgreSql": "FK_5a80ec_EighthTechnologicalLiteracyDescriptor"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "newjerseysmart",
+        "name": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_ELAGraduationPathwayIndicatorDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "ELAGraduationPathwayIndicatorDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "ELAGraduationPathwayIndicatorDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ELAGraduationPathwayIndicatorDescriptorId",
+            "postgreSql": "ELAGraduationPathwayIndicatorDescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "StudentEducationOrganizationResponsibilityAssociationExtension"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "ELAGraduationPathwayIndicatorDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "An indication if and how a student met the English graduation assessment requirements.  ",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ELAGraduationPathwayIndicatorDescriptorId",
+            "postgreSql": "ELAGraduationPathwayIndicatorDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_ELAGraduationPathwayIndicatorDescriptor",
+        "postgreSql": "FK_5a80ec_ELAGraduationPathwayIndicatorDescriptor"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "newjerseysmart",
+        "name": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_EntryTypeDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "EntryTypeDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "EntryTypeDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EntryTypeDescriptorId",
+            "postgreSql": "EntryTypeDescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "StudentEducationOrganizationResponsibilityAssociationExtension"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "EntryTypeDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "SchoolEntryCode ",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EntryTypeDescriptorId",
+            "postgreSql": "EntryTypeDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_EntryTypeDescriptor",
+        "postgreSql": "FK_5a80ec_EntryTypeDescriptor"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "newjerseysmart",
+        "name": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_ExitWithdrawTypeDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "ExitWithdrawTypeDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "ExitWithdrawTypeDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ExitWithdrawTypeDescriptorId",
+            "postgreSql": "ExitWithdrawTypeDescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "StudentEducationOrganizationResponsibilityAssociationExtension"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "ExitWithdrawTypeDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "An indication of the reason why the student exited from membership in the school during the school year.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ExitWithdrawTypeDescriptorId",
+            "postgreSql": "ExitWithdrawTypeDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_ExitWithdrawTypeDescriptor",
+        "postgreSql": "FK_5a80ec_ExitWithdrawTypeDescriptor"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "newjerseysmart",
+        "name": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_FederalHSMathTestingReqDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "FederalHSMathTestingReqDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "FederalHSMathTestingReqDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FederalHSMathTestingReqDescriptorId",
+            "postgreSql": "FederalHSMathTestingReqDescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "StudentEducationOrganizationResponsibilityAssociationExtension"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "FederalHSMathTestingReqDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "This field indicates whether a student has met the federal requirement to take Algebra I (or one of the exceptions noted below) while in high school.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FederalHSMathTestingReqDescriptorId",
+            "postgreSql": "FederalHSMathTestingReqDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_FederalHSMathTestingReqDescriptor",
+        "postgreSql": "FK_5a80ec_FederalHSMathTestingReqDescriptor"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "newjerseysmart",
+        "name": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_GradeLevelDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "GradeLevelDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "GradeLevelDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "GradeLevelDescriptorId",
+            "postgreSql": "GradeLevelDescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "StudentEducationOrganizationResponsibilityAssociationExtension"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "GradeLevelDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "Student grade",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "GradeLevelDescriptorId",
+            "postgreSql": "GradeLevelDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_GradeLevelDescriptor",
+        "postgreSql": "FK_5a80ec_GradeLevelDescriptor"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "newjerseysmart",
+        "name": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_HomelessPrimaryNighttimeResidenceDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "HomelessPrimaryNighttimeResidenceDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "HomelessPrimaryNighttimeResidenceDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "HomelessPrimaryNighttimeResidenceDescriptorId",
+            "postgreSql": "HomelessPrimaryNighttimeResidenceDescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "StudentEducationOrganizationResponsibilityAssociationExtension"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "HomelessPrimaryNighttimeResidenceDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The primary nighttime residence of the student at the time the student is identified as homeless.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "HomelessPrimaryNighttimeResidenceDescriptorId",
+            "postgreSql": "HomelessPrimaryNighttimeResidenceDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_HomelessPrimaryNighttimeResidenceDescriptor",
+        "postgreSql": "FK_5a80ec_HomelessPrimaryNighttimeResidenceDescriptor"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "newjerseysmart",
+        "name": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_InternetAccessTypeInResidenceDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "InternetAccessTypeInResidenceDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "InternetAccessTypeInResidenceDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "InternetAccessTypeInResidenceDescriptorId",
+            "postgreSql": "InternetAccessTypeInResidenceDescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "StudentEducationOrganizationResponsibilityAssociationExtension"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "InternetAccessTypeInResidenceDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "StudentInternetConnectivity",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "InternetAccessTypeInResidenceDescriptorId",
+            "postgreSql": "InternetAccessTypeInResidenceDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_InternetAccessTypeInResidenceDescriptor",
+        "postgreSql": "FK_5a80ec_InternetAccessTypeInResidenceDescriptor"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "newjerseysmart",
+        "name": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_LanguageDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "LanguageDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "LanguageDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "LanguageDescriptorId",
+            "postgreSql": "LanguageDescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "StudentEducationOrganizationResponsibilityAssociationExtension"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "WorldLanguagesAssessedLanguageDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The specific language other than English that is being assessed",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "WorldLanguagesAssessedLanguageDescriptorId",
+            "postgreSql": "WorldLanguagesAssessedLanguageDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_LanguageDescriptor",
+        "postgreSql": "FK_5a80ec_LanguageDescriptor"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "newjerseysmart",
+        "name": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_LanguageDescriptor1"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "LanguageDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "LanguageDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "LanguageDescriptorId",
+            "postgreSql": "LanguageDescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "StudentEducationOrganizationResponsibilityAssociationExtension"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "LIEPLanguageOfInstructionLanguageDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The language of instruction for the Language Instruction Educational Program (LIEP) course in",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "LIEPLanguageOfInstructionLanguageDescriptorId",
+            "postgreSql": "LIEPLanguageOfInstructionLanguageDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_LanguageDescriptor1",
+        "postgreSql": "FK_5a80ec_LanguageDescriptor1"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "newjerseysmart",
+        "name": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_LanguageDescriptor2"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "LanguageDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "LanguageDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "LanguageDescriptorId",
+            "postgreSql": "LanguageDescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "StudentEducationOrganizationResponsibilityAssociationExtension"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "HomeLanguageDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The name of the primary language or dialect that students use to communicate at home.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "HomeLanguageDescriptorId",
+            "postgreSql": "HomeLanguageDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_LanguageDescriptor2",
+        "postgreSql": "FK_5a80ec_LanguageDescriptor2"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "newjerseysmart",
+        "name": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_LanguageInstructionProgramServiceDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "LanguageInstructionProgramServiceDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "LanguageInstructionProgramServiceDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "LanguageInstructionProgramServiceDescriptorId",
+            "postgreSql": "LanguageInstructionProgramServiceDescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "StudentEducationOrganizationResponsibilityAssociationExtension"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "LanguageInstructionProgramServiceDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The course in which an English language learner is placed in order to develop and attain English proficiency",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "LanguageInstructionProgramServiceDescriptorId",
+            "postgreSql": "LanguageInstructionProgramServiceDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_LanguageInstructionProgramServiceDescriptor",
+        "postgreSql": "FK_5a80ec_LanguageInstructionProgramServiceDescriptor"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "newjerseysmart",
+        "name": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_MathGraduationPathwayIndicatorDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "MathGraduationPathwayIndicatorDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "MathGraduationPathwayIndicatorDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "MathGraduationPathwayIndicatorDescriptorId",
+            "postgreSql": "MathGraduationPathwayIndicatorDescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "StudentEducationOrganizationResponsibilityAssociationExtension"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "MathGraduationPathwayIndicatorDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "An indication if and how a student met the math graduation assessment requirements.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "MathGraduationPathwayIndicatorDescriptorId",
+            "postgreSql": "MathGraduationPathwayIndicatorDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_MathGraduationPathwayIndicatorDescriptor",
+        "postgreSql": "FK_5a80ec_MathGraduationPathwayIndicatorDescriptor"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "newjerseysmart",
+        "name": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_MilitaryConnectedStudentDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "MilitaryConnectedStudentDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "MilitaryConnectedStudentDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "MilitaryConnectedStudentDescriptorId",
+            "postgreSql": "MilitaryConnectedStudentDescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "StudentEducationOrganizationResponsibilityAssociationExtension"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "MilitaryConnectedStudentDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "An indication that the student’s parent or guardian is on Active Duty, in the National Guard, or in the Reserve components of the United States military services.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "MilitaryConnectedStudentDescriptorId",
+            "postgreSql": "MilitaryConnectedStudentDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_MilitaryConnectedStudentDescriptor",
+        "postgreSql": "FK_5a80ec_MilitaryConnectedStudentDescriptor"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "newjerseysmart",
+        "name": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_NonPublicDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "NonPublicDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "NonPublicDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "NonPublicDescriptorId",
+            "postgreSql": "NonPublicDescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "StudentEducationOrganizationResponsibilityAssociationExtension"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "NonPublicDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "An indication of whether or not a student is receiving or not receiving services under an individual service plan when that student has been parentally placed into a sectarian or non-sectarian private school and also has been determined eligible for special education and related services.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "NonPublicDescriptorId",
+            "postgreSql": "NonPublicDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_NonPublicDescriptor",
+        "postgreSql": "FK_5a80ec_NonPublicDescriptor"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "newjerseysmart",
+        "name": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_PrimaryLearningDeviceAccessDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "PrimaryLearningDeviceAccessDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "PrimaryLearningDeviceAccessDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "PrimaryLearningDeviceAccessDescriptorId",
+            "postgreSql": "PrimaryLearningDeviceAccessDescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "StudentEducationOrganizationResponsibilityAssociationExtension"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "PrimaryLearningDeviceAccessDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "StudentDeviceOwner",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "PrimaryLearningDeviceAccessDescriptorId",
+            "postgreSql": "PrimaryLearningDeviceAccessDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_PrimaryLearningDeviceAccessDescriptor",
+        "postgreSql": "FK_5a80ec_PrimaryLearningDeviceAccessDescriptor"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "newjerseysmart",
+        "name": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_PrimaryLearningDeviceAwayFromSchoolDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "PrimaryLearningDeviceAwayFromSchoolDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "PrimaryLearningDeviceAwayFromSchoolDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "PrimaryLearningDeviceAwayFromSchoolDescriptorId",
+            "postgreSql": "PrimaryLearningDeviceAwayFromSchoolDescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "StudentEducationOrganizationResponsibilityAssociationExtension"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "PrimaryLearningDeviceAwayFromSchoolDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "StudentDeviceType",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "PrimaryLearningDeviceAwayFromSchoolDescriptorId",
+            "postgreSql": "PrimaryLearningDeviceAwayFromSchoolDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_PrimaryLearningDeviceAwayFromSchoolDescriptor",
+        "postgreSql": "FK_5a80ec_PrimaryLearningDeviceAwayFromSchoolDescriptor"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "newjerseysmart",
+        "name": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_StateAbbreviationDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "StateAbbreviationDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "StateAbbreviationDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StateAbbreviationDescriptorId",
+            "postgreSql": "StateAbbreviationDescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "StudentEducationOrganizationResponsibilityAssociationExtension"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "StateOfBirthStateAbbreviationDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The name of the state in which the student was born.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StateOfBirthStateAbbreviationDescriptorId",
+            "postgreSql": "StateOfBirthStateAbbreviationDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_StateAbbreviationDescriptor",
+        "postgreSql": "FK_5a80ec_StateAbbreviationDescriptor"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "newjerseysmart",
+        "name": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_StudentEducationOrganizationResponsibilityAssociation"
+      },
+      "cardinality": "OneToOneExtension",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "StudentEducationOrganizationResponsibilityAssociation"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "BeginDate",
+          "propertyType": {
+            "dbType": "Date",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Month, day, and year of the start date of an education organization's responsibility for a student.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "BeginDate",
+            "postgreSql": "BeginDate"
+          }
+        },
+        {
+          "propertyName": "EducationOrganizationId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to an education organization.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationOrganizationId",
+            "postgreSql": "EducationOrganizationId"
+          }
+        },
+        {
+          "propertyName": "ResponsibilityDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Indications of an education organization's responsibility for a student, such as accountability, attendance, funding, etc.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ResponsibilityDescriptorId",
+            "postgreSql": "ResponsibilityDescriptorId"
+          }
+        },
+        {
+          "propertyName": "StudentUSI",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique alphanumeric code assigned to a student.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentUSI",
+            "postgreSql": "StudentUSI"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "StudentEducationOrganizationResponsibilityAssociationExtension"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "BeginDate",
+          "propertyType": {
+            "dbType": "Date",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Month, day, and year of the start date of an education organization's responsibility for a student.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "BeginDate",
+            "postgreSql": "BeginDate"
+          }
+        },
+        {
+          "propertyName": "EducationOrganizationId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to an education organization.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationOrganizationId",
+            "postgreSql": "EducationOrganizationId"
+          }
+        },
+        {
+          "propertyName": "ResponsibilityDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Indications of an education organization's responsibility for a student, such as accountability, attendance, funding, etc.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ResponsibilityDescriptorId",
+            "postgreSql": "ResponsibilityDescriptorId"
+          }
+        },
+        {
+          "propertyName": "StudentUSI",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique alphanumeric code assigned to a student.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentUSI",
+            "postgreSql": "StudentUSI"
+          }
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_StudentEducationOrganizationResponsibilityAssociation",
+        "postgreSql": "FK_5a80ec_StudentEducationOrganizationResponsibilityAssociation"
+      }
+    },
+    {
+      "fullName": {
+        "schema": "newjerseysmart",
+        "name": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_TuitionCodeDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "TuitionCodeDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "TuitionCodeDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "TuitionCodeDescriptorId",
+            "postgreSql": "TuitionCodeDescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "StudentEducationOrganizationResponsibilityAssociationExtension"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "TuitionCodeDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "An indicator of the source of payment for a student.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "TuitionCodeDescriptorId",
+            "postgreSql": "TuitionCodeDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_TuitionCodeDescriptor",
+        "postgreSql": "FK_5a80ec_TuitionCodeDescriptor"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "newjerseysmart",
+        "name": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_WorldLanguageAssessmentDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "WorldLanguageAssessmentDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "WorldLanguageAssessmentDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "WorldLanguageAssessmentDescriptorId",
+            "postgreSql": "WorldLanguageAssessmentDescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "StudentEducationOrganizationResponsibilityAssociationExtension"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "WorldLanguageAssessmentDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The World Language Assessment taken by the student",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "WorldLanguageAssessmentDescriptorId",
+            "postgreSql": "WorldLanguageAssessmentDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_StudentEducationOrganizationResponsibilityAssociationExtension_WorldLanguageAssessmentDescriptor",
+        "postgreSql": "FK_5a80ec_WorldLanguageAssessmentDescriptor"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "newjerseysmart",
+        "name": "FK_StudentEducationOrganizationResponsibilityAssociationRace_RaceDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "RaceDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "RaceDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "RaceDescriptorId",
+            "postgreSql": "RaceDescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "StudentEducationOrganizationResponsibilityAssociationRace"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "RaceDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "student race",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "RaceDescriptorId",
+            "postgreSql": "RaceDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_StudentEducationOrganizationResponsibilityAssociationRace_RaceDescriptor",
+        "postgreSql": "FK_bd748e_RaceDescriptor"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "newjerseysmart",
+        "name": "FK_StudentEducationOrganizationResponsibilityAssociationRace_StudentEducationOrganizationResponsibilityAssociation"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "StudentEducationOrganizationResponsibilityAssociation"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "BeginDate",
+          "propertyType": {
+            "dbType": "Date",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Month, day, and year of the start date of an education organization's responsibility for a student.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "BeginDate",
+            "postgreSql": "BeginDate"
+          }
+        },
+        {
+          "propertyName": "EducationOrganizationId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to an education organization.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationOrganizationId",
+            "postgreSql": "EducationOrganizationId"
+          }
+        },
+        {
+          "propertyName": "ResponsibilityDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Indications of an education organization's responsibility for a student, such as accountability, attendance, funding, etc.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ResponsibilityDescriptorId",
+            "postgreSql": "ResponsibilityDescriptorId"
+          }
+        },
+        {
+          "propertyName": "StudentUSI",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique alphanumeric code assigned to a student.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentUSI",
+            "postgreSql": "StudentUSI"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "StudentEducationOrganizationResponsibilityAssociationRace"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "BeginDate",
+          "propertyType": {
+            "dbType": "Date",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Month, day, and year of the start date of an education organization's responsibility for a student.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "BeginDate",
+            "postgreSql": "BeginDate"
+          }
+        },
+        {
+          "propertyName": "EducationOrganizationId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to an education organization.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationOrganizationId",
+            "postgreSql": "EducationOrganizationId"
+          }
+        },
+        {
+          "propertyName": "ResponsibilityDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Indications of an education organization's responsibility for a student, such as accountability, attendance, funding, etc.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ResponsibilityDescriptorId",
+            "postgreSql": "ResponsibilityDescriptorId"
+          }
+        },
+        {
+          "propertyName": "StudentUSI",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique alphanumeric code assigned to a student.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentUSI",
+            "postgreSql": "StudentUSI"
+          }
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_StudentEducationOrganizationResponsibilityAssociationRace_StudentEducationOrganizationResponsibilityAssociation",
+        "postgreSql": "FK_bd748e_StudentEducationOrganizationResponsibilityAssociation"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "newjerseysmart",
+        "name": "FK_StudentEducationOrganizationResponsibilityAssociationStudentCharacteristic_StudentCharacteristicDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "StudentCharacteristicDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "StudentCharacteristicDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentCharacteristicDescriptorId",
+            "postgreSql": "StudentCharacteristicDescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "StudentEducationOrganizationResponsibilityAssociationStudentCharacteristic"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "StudentCharacteristicDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Various characteristics of the student",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentCharacteristicDescriptorId",
+            "postgreSql": "StudentCharacteristicDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_StudentEducationOrganizationResponsibilityAssociationStudentCharacteristic_StudentCharacteristicDescriptor",
+        "postgreSql": "FK_f15efe_StudentCharacteristicDescriptor"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "newjerseysmart",
+        "name": "FK_StudentEducationOrganizationResponsibilityAssociationStudentCharacteristic_StudentEducationOrganizationResponsibilityAssociat"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "StudentEducationOrganizationResponsibilityAssociation"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "BeginDate",
+          "propertyType": {
+            "dbType": "Date",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Month, day, and year of the start date of an education organization's responsibility for a student.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "BeginDate",
+            "postgreSql": "BeginDate"
+          }
+        },
+        {
+          "propertyName": "EducationOrganizationId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to an education organization.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationOrganizationId",
+            "postgreSql": "EducationOrganizationId"
+          }
+        },
+        {
+          "propertyName": "ResponsibilityDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Indications of an education organization's responsibility for a student, such as accountability, attendance, funding, etc.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ResponsibilityDescriptorId",
+            "postgreSql": "ResponsibilityDescriptorId"
+          }
+        },
+        {
+          "propertyName": "StudentUSI",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique alphanumeric code assigned to a student.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentUSI",
+            "postgreSql": "StudentUSI"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "StudentEducationOrganizationResponsibilityAssociationStudentCharacteristic"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "BeginDate",
+          "propertyType": {
+            "dbType": "Date",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Month, day, and year of the start date of an education organization's responsibility for a student.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "BeginDate",
+            "postgreSql": "BeginDate"
+          }
+        },
+        {
+          "propertyName": "EducationOrganizationId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to an education organization.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationOrganizationId",
+            "postgreSql": "EducationOrganizationId"
+          }
+        },
+        {
+          "propertyName": "ResponsibilityDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Indications of an education organization's responsibility for a student, such as accountability, attendance, funding, etc.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ResponsibilityDescriptorId",
+            "postgreSql": "ResponsibilityDescriptorId"
+          }
+        },
+        {
+          "propertyName": "StudentUSI",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique alphanumeric code assigned to a student.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentUSI",
+            "postgreSql": "StudentUSI"
+          }
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_StudentEducationOrganizationResponsibilityAssociationStudentCharacteristic_StudentEducationOrganizationResponsibilityAssociat",
+        "postgreSql": "FK_f15efe_StudentEducationOrganizationResponsibilityAssociation"
+      },
+      "potentiallyLogical": false
     },
     {
       "fullName": {
@@ -2230,6 +5400,66 @@
       "constraintNames": {
         "sqlServer": "FK_TuitionCodeDescriptor_Descriptor",
         "postgreSql": "FK_fcbf7d_Descriptor"
+      },
+      "potentiallyLogical": false
+    },
+    {
+      "fullName": {
+        "schema": "newjerseysmart",
+        "name": "FK_WorldLanguageAssessmentDescriptor_Descriptor"
+      },
+      "cardinality": "OneToOneInheritance",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "Descriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "DescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": true,
+          "columnNames": {
+            "sqlServer": "DescriptorId",
+            "postgreSql": "DescriptorId"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "newjerseysmart",
+        "name": "WorldLanguageAssessmentDescriptor"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "WorldLanguageAssessmentDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": true,
+          "columnNames": {
+            "sqlServer": "WorldLanguageAssessmentDescriptorId",
+            "postgreSql": "WorldLanguageAssessmentDescriptorId"
+          }
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_WorldLanguageAssessmentDescriptor_Descriptor",
+        "postgreSql": "FK_3c4ee7_Descriptor"
       },
       "potentiallyLogical": false
     }

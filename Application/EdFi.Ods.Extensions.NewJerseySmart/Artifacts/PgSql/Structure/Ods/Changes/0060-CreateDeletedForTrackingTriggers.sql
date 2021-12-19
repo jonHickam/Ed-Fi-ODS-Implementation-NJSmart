@@ -1,3 +1,17 @@
+CREATE FUNCTION tracked_deletes_newjerseysmart.BridgeYearParticipationStatusDescriptor_TR_DelTrkg()
+    RETURNS trigger AS
+$BODY$
+BEGIN
+    INSERT INTO tracked_deletes_newjerseysmart.BridgeYearParticipationStatusDescriptor(BridgeYearParticipationStatusDescriptorId, Id, ChangeVersion)
+    SELECT OLD.BridgeYearParticipationStatusDescriptorId, Id, nextval('changes.ChangeVersionSequence')
+    FROM edfi.Descriptor WHERE DescriptorId = OLD.BridgeYearParticipationStatusDescriptorId;
+    RETURN NULL;
+END;
+$BODY$ LANGUAGE plpgsql;
+
+CREATE TRIGGER TrackDeletes AFTER DELETE ON newjerseysmart.BridgeYearParticipationStatusDescriptor 
+    FOR EACH ROW EXECUTE PROCEDURE tracked_deletes_newjerseysmart.BridgeYearParticipationStatusDescriptor_TR_DelTrkg();
+
 CREATE FUNCTION tracked_deletes_newjerseysmart.ELAGraduationPathwayIndicatorDescriptor_TR_DelTrkg()
     RETURNS trigger AS
 $BODY$
@@ -109,4 +123,18 @@ $BODY$ LANGUAGE plpgsql;
 
 CREATE TRIGGER TrackDeletes AFTER DELETE ON newjerseysmart.TuitionCodeDescriptor 
     FOR EACH ROW EXECUTE PROCEDURE tracked_deletes_newjerseysmart.TuitionCodeDescriptor_TR_DelTrkg();
+
+CREATE FUNCTION tracked_deletes_newjerseysmart.WorldLanguageAssessmentDescriptor_TR_DelTrkg()
+    RETURNS trigger AS
+$BODY$
+BEGIN
+    INSERT INTO tracked_deletes_newjerseysmart.WorldLanguageAssessmentDescriptor(WorldLanguageAssessmentDescriptorId, Id, ChangeVersion)
+    SELECT OLD.WorldLanguageAssessmentDescriptorId, Id, nextval('changes.ChangeVersionSequence')
+    FROM edfi.Descriptor WHERE DescriptorId = OLD.WorldLanguageAssessmentDescriptorId;
+    RETURN NULL;
+END;
+$BODY$ LANGUAGE plpgsql;
+
+CREATE TRIGGER TrackDeletes AFTER DELETE ON newjerseysmart.WorldLanguageAssessmentDescriptor 
+    FOR EACH ROW EXECUTE PROCEDURE tracked_deletes_newjerseysmart.WorldLanguageAssessmentDescriptor_TR_DelTrkg();
 

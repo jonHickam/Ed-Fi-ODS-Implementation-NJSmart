@@ -230,6 +230,26 @@ INSERT INTO edfi.descriptor (Namespace, CodeValue, shortDescription, Description
 INSERT INTO edfi.descriptor (Namespace, CodeValue, shortDescription, Description) values ('uri://njsmart.org/PrimaryLearningDeviceAwayFromSchoolDescriptor','5','None','None');
 
 
+INSERT INTO edfi.descriptor (Namespace, CodeValue, shortDescription, Description) values ('uri://njsmart.org/GradeLevelDescriptor','01','Grade 1','Grade 1');
+INSERT INTO edfi.descriptor (Namespace, CodeValue, shortDescription, Description) values ('uri://njsmart.org/GradeLevelDescriptor','02','Grade 2','Grade 2');
+
+INSERT INTO edfi.descriptor (Namespace, CodeValue, shortDescription, Description) values ('uri://njsmart.org/GradeLevelDescriptor','03','Grade 3','Grade 3');
+
+select * from edfi.Descriptor
+where namespace like 'uri://njsmart.org/GradeLevelDescriptor'
+order by namespace
+
+
+INSERT INTO edfi.GradeLevelDescriptor(GradeLevelDescriptorId)
+SELECT descriptorId 
+from edfi.Descriptor
+left join edfi.GradeLevelDescriptor t1
+	on t1.GradeLevelDescriptorId = Descriptor.DescriptorId
+where
+Namespace = 'uri://njsmart.org/GradeLevelDescriptor'
+and t1.GradeLevelDescriptorId is null;
+
+
 
 INSERT INTO edfi.AssessmentCategoryDescriptor(AssessmentCategoryDescriptorId)
 SELECT descriptorId from edfi.Descriptor where Namespace = 'uri://njsmart.org/assessmentCategoryDescriptor';
